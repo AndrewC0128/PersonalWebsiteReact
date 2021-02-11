@@ -1,11 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import logo from '../assets/logo.svg';
+import '../styles/App.css';
+import Header from './Header';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
+		  <Header displaytext="First Component Data"/>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -21,5 +24,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
