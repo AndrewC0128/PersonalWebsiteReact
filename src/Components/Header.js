@@ -1,6 +1,6 @@
-import React from 'react';
-import { AppBar, Toolbar, Button, makeStyles, IconButton, Icon,
-  Tooltip, useScrollTrigger, Fab } from '@material-ui/core';
+import React, { useState, useEffect, useRef } from 'react';
+import { AppBar, Toolbar, Button, makeStyles, IconButton, Icon, Tooltip,
+  Fab } from '@material-ui/core';
 import jugglerIcon from '../assets/jugglerIcon.png';
 import { EmailOutlined, LinkedIn, DescriptionOutlined, KeyboardArrowUp } from '@material-ui/icons';
 // import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined';
@@ -45,9 +45,9 @@ const useStyles = makeStyles(() => ({
     width: 40,
   },
   headerPageButton: {
-    fontFamily: "Open Sans, sans-serif",
+    fontFamily: 'Open Sans, sans-serif',
     fontWeight: 700,
-    size: "18px",
+    size: '18px',
   },
   toolbar: {
     color: 'white',
@@ -68,10 +68,28 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default function Header() {
-  const {logo, headerPageButton, headerIconButton, toolbar,
-    fabLocation} = useStyles();
+  const {logo, headerPageButton, headerIconButton, toolbar, fabLocation} = useStyles();
 
-  const scrollTriggered = useScrollTrigger() && window.pageYOffset !== 0;
+  // Scroll Tracking
+  const previousY = useRef(0);
+  const [scrollTriggered, changeScrollState] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      // Get current Y position
+      const currentY = window.scrollY;
+      if (currentY !== 0) {
+        changeScrollState(true);
+      } else {
+        changeScrollState(false);
+      }
+      // Reset Y position
+      previousY.current = currentY;
+    };
+    // Add the listener
+    window.addEventListener('scroll', handleScroll, ); // { passive: true }
+    // Remove the listener
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [scrollTriggered])
 
   const getHeaderButtons = () => {
     return (
@@ -118,9 +136,9 @@ export default function Header() {
       <header>
         <AppBar color={scrollTriggered ? 'default' : 'transparent'}>
           <Toolbar className={toolbar}>
-            <div>{getHeaderButtons()}</div>
-            <img src={jugglerIcon} alt='Technology Juggler Icon' className={logo} onClick={() => {console.log(window.pageYOffset)}}/>
-            <div>{getHeaderIcons()}</div>
+            {getHeaderButtons()}
+            <img src={jugglerIcon} alt='Technology Juggler Icon' className={logo}/>
+            {getHeaderIcons()}
           </Toolbar>
         </AppBar>
       </header>
