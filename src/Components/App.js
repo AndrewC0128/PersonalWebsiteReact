@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../assets/logo.svg';
 import '../styles/App.css';
 import Header from './Header';
 
@@ -21,6 +20,20 @@ export default function App() {
           Learn React
         </a>
       </header>
+      <p>Test</p>
+      <p>Test</p>
+      <p>Test</p>
+      <p>Test</p>
+      <p>Test</p>
+      <p>Test</p>
+      <p>Test</p>
+      <p>Test</p>
+      <p>Test</p>
+      <p>Test</p>
+      <p>Test</p>
+      <p>Test</p>
+      <p>Test</p>
+      <p>Test</p>
     </div>
   );
 }
