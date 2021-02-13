@@ -35,7 +35,8 @@ const HeaderIcons = [
   },
   {
     label: 'Resume',
-    url: 'https://www.google.com',
+    url: '/Resume_ACASE.pdf',
+    downloadName: 'Resume_ACASE.pdf',
     component: <DescriptionOutlined/>
   }
 ]
@@ -138,13 +139,15 @@ export default function Header() {
   const getHeaderIcons = () => {
     return (
       <div style={{flex: 1, textAlign: 'right'}}>
-        {HeaderIcons.map(({label, url, component}) => (
+        {HeaderIcons.map(({label, url, component, downloadName}) => (
           <Tooltip title={label} key={label}>
             <IconButton {...{
               key: label,
               color: 'inherit',
               target: '_blank',
+              rel: 'noopener noreferrer',
               href: url,
+              download: downloadName,
               className: headerIconButton
             }}>
             <Icon style={{color: scrollTriggered ? 'black' : 'white'}}>
