@@ -8,16 +8,16 @@ import { Link as RouterLink } from "react-router-dom";
 
 const HeaderTabs = [
   {
-    label: "Home",
-    href: "/home",
+    label: 'Home',
+    href: '/home',
   },
   {
-    label: "About",
-    href: "/about",
+    label: 'About',
+    href: '/about',
   },
   {
-    label: "Fitness",
-    href: "/fitness",
+    label: 'Fitness',
+    href: '/fitness',
   }
 ]
 
@@ -77,7 +77,7 @@ export default function Header() {
     const handleScroll = () => {
       // Get current Y position
       const currentY = window.scrollY;
-      if (currentY !== 0) {
+      if (currentY > 385) {
         changeScrollState(true);
       } else {
         changeScrollState(false);
@@ -144,7 +144,7 @@ export default function Header() {
       </header>
       {scrollTriggered ?
         <Toolbar className={fabLocation}>
-          <Fab color='secondary' size='small' onClick={() => {window.scrollTo(0,0)}}>
+          <Fab color='secondary' size='small' onClick={() => window.scrollTo(0,0)}>
             <KeyboardArrowUp />
           </Fab>
         </Toolbar> : null}
