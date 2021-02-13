@@ -36,14 +36,14 @@ export default function AboutMe() {
   useEffect(() => {
     fetch(aboutMeParagraph)
     .then(text => text.text()
-    .then(t => setText(t.split('\n').map(str => <p>{str}</p>))))
+    .then(t => setText(t.split('\n').map(str => <p key={str}>{str}</p>))))
   }, [])
 
   return (
     <div className={background}>
       <div className={paragraph}>
           <Typography variant='h2' className={title}>About Me</Typography>
-          <p>{paragraphText}</p>
+          {paragraphText}
           <p style={{textAlign: 'center'}}>
             Post-Graduation Employment:
             <a target='_blank' rel='noopener noreferrer' href='https://www.paycom.com/'>

@@ -1,16 +1,16 @@
 import React from 'react';
-import { Button, makeStyles } from '@material-ui/core';
 import Banner from '../Components/Banner';
 import AboutMe from '../Components/AboutMe';
+import Icons from '../Components/Icons';
 
 const AboutIcons = [
   {
     label: 'College Degreed',
     img: 'degreed.png',
-    href: 'degree'
+    href: '/background#education'
   },
   {
-    label: 'Coding Experience',
+    label: 'Programming Background',
     img: 'exp.png',
     href: 'exp'
   },
@@ -32,48 +32,19 @@ const AboutIcons = [
   {
     label: 'Active Community Volunteer',
     img: 'volunteer.png',
-    href: 'volunteer'
+    href: 'volunteer',
+    lastOne: true
   },
 ]
 
-const useStyles = makeStyles(() => ({
-  icons: {
-    display: 'flex',
-    justifyContent: 'space-evenly',
-    // padding: '3%',
-    padding: '3% 15% 3% 15%',
-  }
-}))
-
 export default function Homepage() {
-  const {icons} = useStyles();
   const subtitle = '"An explorer\'s reward is a view of tomorrow\'s possibilities."'
-
-  const getAboutIcons = () => {
-    return (
-      <div className={icons}>
-        {AboutIcons.map(({label, img, href}) => (
-          <div style={{flex: 1, textAlign: 'center', borderRight: href !== 'volunteer' ? '1px solid black' : null}}>
-            <Button {...{
-              key: label,
-              to: href,
-              style: {maxWidth: 64}
-            }}>
-              <img key={img} src={require(`../assets/iconFinderImages/${img}`)} alt={label} style={{maxWidth: 64}}/>
-            </Button>
-            <br/>
-            {label}
-          </div>
-        ))}
-      </div>
-    )
-  }
 
   return (
     <>
       <Banner title="Hi, I'm Andrew Case" subtitle={subtitle}/>
       <AboutMe/>
-      {getAboutIcons()}
+      <Icons icons={AboutIcons} imgsPath='assets/iconFinderImages/'/>
     </>
   )
 }

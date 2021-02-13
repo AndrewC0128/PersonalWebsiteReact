@@ -3,7 +3,8 @@ import { makeStyles, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
   footerCredits: {
-    paddingBottom: '1.85em'
+    paddingBottom: '1.85em',
+    textAlign: 'center'
   },
   footerLine: {
     width: '188px',
@@ -18,6 +19,7 @@ export default function Header() {
   return (
     <div>
       <footer>
+        <p>&nbsp;</p>
         <hr className={footerLine}/>
         <Typography className={footerCredits}>
           "It's all good." - JW<br/>&copy; 2020 Andrew Case
