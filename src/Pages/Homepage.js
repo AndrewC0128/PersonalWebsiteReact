@@ -12,7 +12,7 @@ export default function Homepage() {
     <>
       <Banner title="Hi, I'm Andrew Case" subtitle={subtitle}/>
       <AboutMe/>
-      <Icons icons={AboutIcons} imgsPath='assets/iconFinderImages/' lines={true}/>
+      <Icons icons={AboutIcons} imgsPath='assets/iconFinderImages/' imgWidth={64} lines={true}/>
     </>
   )
 }

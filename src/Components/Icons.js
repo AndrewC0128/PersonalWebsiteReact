@@ -22,10 +22,10 @@ export default function Icons(props) {
             key: href ? href : `id${label}`,
             to: href ? href : history.location.pathname,
             component: Link,
-            style: {maxWidth: 64},
+            style: {maxWidth: props.imgWidth, maxHeight: props.imgHeight},
             disabled: href ? false : true
           }}>
-            <img key={img} src={require(`../${props.imgsPath}${img}`)} alt={label} style={{maxWidth: 64}}/>
+            <img key={img} src={require(`../${props.imgsPath}${img}`)} alt={label} style={{maxWidth: props.imgWidth}}/>
           </Button>
           <br/>
           {label}
