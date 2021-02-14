@@ -3,6 +3,7 @@ import Banner from '../Components/Banner';
 import Icons from '../Components/Icons';
 import Education from '../Components/Education';
 import { setTitle, getParagraph } from '../Helpers';
+import IconsModal from '../Components/IconsModal';
 
 export default function BackgroundPage() {
   const subtitle = '"The roots of education are bitter, but the fruit is sweet." - Aristotle'
@@ -11,8 +12,7 @@ export default function BackgroundPage() {
   return (
     <div>
       <Banner title='Background' subtitle={subtitle}/>
-      <Icons icons={PageSectionIcons} imgsPath='assets/iconFinderImages/' imgWidth={64} lines={true}/>
-      <Icons id='work' icons={ProgrammingLangIcons} imgsPath='assets/progLangs/' imgWidth={64} lines={false}/>
+      <Icons icons={PageSectionIcons} imgsPath='assets/iconFinderImages/' imgWidth={64}/>
       <Education id='education' title='BAYLOR UNIVERSITY' titleColor='#fecb00'
                  backgroundColor='#003015' paragraph={require('../assets/paragraphs/baylorParagraph.txt')}
                  img={require('../assets/judgeBaylor.jpg')} alt={'Judge Baylor Picture'}/>
@@ -20,7 +20,9 @@ export default function BackgroundPage() {
                  paragraph={require('../assets/paragraphs/lonestarParagraph.txt')}
                  img={require('../assets/lscGraduation.jpg')}
                  alt={'LSC Graduation Picture'} reverse='true'/>
-      <Icons icons={Employers} imgsPath='assets/employers/' imgWidth={250} imgHeight={200} lines={false}/>
+      <IconsModal icons={Employers} imgsPath='assets/employers/' imgWidth={250} imgHeight={200} showLabel={false}/>
+      <IconsModal icons={Affiliations} imgsPath='assets/employers/' imgWidth={150} imgHeight={150} showLabel={false}/>
+      <Icons id='work' icons={ProgrammingLangIcons} imgsPath='assets/progLangs/' imgWidth={64} lines={false} showLabel={false}/>
     </div>
   )
 }
@@ -89,14 +91,12 @@ const ProgrammingLangIcons = [
 ]
 
 const paragraphPath = 'assets/paragraphs/';
-
 const Employers = [
   {
     id: 'ExxonMobil',
     date: 'Summer 2020 Remote Internship',
     label: 'Full Stack Developer Intern',
     img: 'xom.png',
-    href: 'https://corporate.exxonmobil.com/',
     paragraph: getParagraph(`./${paragraphPath}xomParagraph.txt`),
   },
   {
@@ -104,7 +104,6 @@ const Employers = [
     date: 'Summer 2019 Internship',
     label: 'Software Engineer Intern',
     img: 'heb.png',
-    href: 'https://www.heb.com/',
     paragraph: getParagraph(`./${paragraphPath}hebParagraph.txt`),
   },
   {
@@ -112,7 +111,6 @@ const Employers = [
     date: 'Oct 2015 - May 2017',
     label: 'Shift Manager',
     img: 'pdq.png',
-    href: 'https://www.eatpdq.com/',
     paragraph: getParagraph(`./${paragraphPath}pdqParagraph.txt`),
   },
   {
@@ -120,7 +118,43 @@ const Employers = [
     date: 'Mar 2015 - Jun 2016',
     label: 'Shift Leader',
     img: 'dunkin.png',
-    href: 'https://www.dunkindonuts.com/en',
     paragraph: getParagraph(`./${paragraphPath}dunkinParagraph.txt`),
+  },
+]
+const Affiliations = [
+  {
+    id: 'Computing for Compassion',
+    date: 'Sept 2018 - May 2020',
+    label: 'Member',
+    img: 'c4c.png',
+    paragraph: getParagraph(`./${paragraphPath}c4cParagraph.txt`),
+  },
+  {
+    id: 'Upsilon Pi Epsilon (Baylor University Chapter)',
+    date: 'Oct 2018 – Present',
+    label: 'Member',
+    img: 'upe.png',
+    paragraph: getParagraph(`./${paragraphPath}upeParagraph.txt`),
+  },
+  {
+    id: 'Baylor’s Virtual Reality Club',
+    date: 'Feb 2018 – May 2018',
+    label: 'Founding Member',
+    img: 'baylorvr.png',
+    paragraph: getParagraph(`./${paragraphPath}baylorvrParagraph.txt`),
+  },
+  {
+    id: 'Phi Theta Kappa (Alpha Rho Mu Chapter)',
+    date: 'Mar 2016 – Present',
+    label: 'Member',
+    img: 'ptk.png',
+    paragraph: getParagraph(`./${paragraphPath}ptkParagraph.txt`),
+  },
+  {
+    id: 'YMCA of Greater Houston',
+    date: 'Aug 2017 – Present',
+    label: 'Adult Volunteer',
+    img: 'ymca.png',
+    paragraph: getParagraph(`./${paragraphPath}ymcaParagraph.txt`),
   },
 ]

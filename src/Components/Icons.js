@@ -2,22 +2,27 @@ import React from 'react';
 import { Button, makeStyles } from '@material-ui/core';
 import { Link, useHistory } from 'react-router-dom';
 
-const useStyles = makeStyles(() => ({
-  icons: {
+export const useStyles = makeStyles(() => ({
+  rowContainer: {
     display: 'flex',
     justifyContent: 'space-evenly',
     padding: '3% 15% 3% 15%',
+    alignItems: 'center'
+  },
+  icon: {
+    flex: 1,
+    textAlign: 'center'
   }
 }))
 
 export default function Icons(props) {
-  const {icons} = useStyles();
+  const {rowContainer, icon} = useStyles();
   const history = useHistory();
 
   return (
-    <div className={icons}>
+    <div className={rowContainer}>
       {props.icons.map(({label, img, href, lastOne}) => (
-        <div key={label} style={{flex: 1, textAlign: 'center', borderRight: (!lastOne && props.lines) ? '1px solid black' : null}}>
+        <div key={label} className={icon} style={{borderRight: (!lastOne && props.lines !== false) ? '1px solid black' : null}}>
           <Button {...{
             key: href ? href : `id${label}`,
             to: href ? href : history.location.pathname,
@@ -28,7 +33,7 @@ export default function Icons(props) {
             <img key={img} src={require(`../${props.imgsPath}${img}`)} alt={label} style={{maxWidth: props.imgWidth}}/>
           </Button>
           <br/>
-          {label}
+          {props.showLabel === false ? null : label }
         </div>
       ))}
     </div>
