@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import profilePicture from '../assets/profilePicture.jpg'
-import aboutMeParagraph from '../assets/aboutMeParagraph.txt';
 import { makeStyles, Typography } from '@material-ui/core';
+import { getParagraph } from '../Helpers';
 
 const useStyles = makeStyles(() => ({
   background: {
@@ -34,9 +34,9 @@ export default function AboutMe() {
   // Set paragraph text from file
   const [paragraphText, setText] = useState('');
   useEffect(() => {
-    fetch(aboutMeParagraph)
-    .then(text => text.text()
-    .then(t => setText(t.split('\n').map(str => <p key={str}>{str}</p>))))
+    getParagraph('./assets/paragraphs/aboutMeParagraph.txt').then(result => (
+      setText(result)
+    ))
   }, [])
 
   return (

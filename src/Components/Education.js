@@ -33,7 +33,7 @@ export default function Education(props) {
   useEffect(() => {
     fetch(props.paragraph)
     .then(text => text.text()
-    .then(t => setText(t.split('\n').map(str => <p>{str}</p>))))
+    .then(t => setText(t.split('\n').map(str => <p key={str}>{str}</p>))))
   }, [])
 
   return (
@@ -41,7 +41,7 @@ export default function Education(props) {
          style={{backgroundColor: props.backgroundColor, flexDirection: props.reverse ? 'row-reverse' : null}}>
       <div className={paragraph}>
           <Typography variant='h2' className={title} style={{color: props.titleColor}}>{props.title}</Typography>
-          <p>{paragraphText}</p>
+          {paragraphText}
       </div>
       <img src={props.img} className={picture} alt={props.alt}/>
     </div>

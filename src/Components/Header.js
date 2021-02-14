@@ -2,44 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { AppBar, Toolbar, Button, makeStyles, IconButton, Icon, Tooltip,
   Fab } from '@material-ui/core';
 import jugglerIcon from '../assets/jugglerIcon.png';
-import { EmailOutlined, LinkedIn, DescriptionOutlined, KeyboardArrowUp } from '@material-ui/icons';
+import { EmailOutlined, LinkedIn, GitHub, DescriptionOutlined, KeyboardArrowUp } from '@material-ui/icons';
 import { Link, useHistory } from 'react-router-dom';
-
-const HeaderSize = 64;
-
-const HeaderTabs = [
-  {
-    label: 'Home',
-    href: '/',
-  },
-  {
-    label: 'Background',
-    href: '/background',
-  },
-  {
-    label: 'Fitness',
-    href: '/fitness',
-  }
-]
-
-const HeaderIcons = [
-  {
-    label: 'Email',
-    url: 'mailto:andrew_case1@baylor.edu',
-    component: <EmailOutlined/>,
-  },
-  {
-    label: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/andrewcase1/',
-    component: <LinkedIn/>
-  },
-  {
-    label: 'Resume',
-    url: '/Resume_ACASE.pdf',
-    downloadName: 'Resume_ACASE.pdf',
-    component: <DescriptionOutlined/>
-  }
-]
 
 const useStyles = makeStyles(() => ({
   logo: {
@@ -180,3 +144,44 @@ export default function Header() {
     </div>
   );
 }
+
+const HeaderSize = 64;
+
+const HeaderTabs = [
+  {
+    label: 'Home',
+    href: '/',
+  },
+  {
+    label: 'Background',
+    href: '/background',
+  },
+  {
+    label: 'Fitness',
+    href: '/fitness',
+  }
+]
+
+const HeaderIcons = [
+  {
+    label: 'Email',
+    url: 'mailto:andrew_case1@baylor.edu',
+    component: <EmailOutlined/>,
+  },
+  {
+    label: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/andrewcase1/',
+    component: <LinkedIn/>
+  },
+  {
+    label: 'GitHub',
+    url: 'https://github.com/AndrewC0128',
+    component: <GitHub/>
+  },
+  {
+    label: 'Resume',
+    url: '/Resume_ACASE.pdf',
+    downloadName: 'Resume_ACASE.pdf',
+    component: <DescriptionOutlined/>
+  }
+]

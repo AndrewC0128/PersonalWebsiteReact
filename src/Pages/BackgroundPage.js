@@ -2,6 +2,29 @@ import React from 'react';
 import Banner from '../Components/Banner';
 import Icons from '../Components/Icons';
 import Education from '../Components/Education';
+import WorkExp from '../Components/WorkExp';
+import { setTitle } from '../Helpers';
+
+export default function BackgroundPage() {
+  const subtitle = '"The roots of education are bitter, but the fruit is sweet." - Aristotle'
+  setTitle('Background');
+
+  return (
+    <div>
+      <Banner title='Background' subtitle={subtitle}/>
+      <Icons icons={PageSectionIcons} imgsPath='assets/iconFinderImages/' lines={true}/>
+      <Education id='education' title='BAYLOR UNIVERSITY' titleColor='#fecb00'
+                 backgroundColor='#003015' paragraph={require('../assets/paragraphs/baylorParagraph.txt')}
+                 img={require('../assets/judgeBaylor.jpg')} alt={'Judge Baylor Picture'}/>
+      <Education title='LONE STAR COLLEGE' titleColor='#b30838' backgroundColor='#003768'
+                 paragraph={require('../assets/paragraphs/lonestarParagraph.txt')}
+                 img={require('../assets/lscGraduation.jpg')}
+                 alt={'LSC Graduation Picture'} reverse='true'/>
+      <Icons id='work' icons={ProgrammingLangIcons} imgsPath='assets/progLangs/' lines={false}/>
+      <WorkExp/>
+    </div>
+  )
+}
 
 const PageSectionIcons = [
   {
@@ -65,24 +88,3 @@ const ProgrammingLangIcons = [
     lastOne: true
   },
 ]
-
-export default function BackgroundPage() {
-  const subtitle = '"The roots of education are bitter, but the fruit is sweet." - Aristotle'
-
-  return (
-    <div>
-      <Banner title='Background' subtitle={subtitle}/>
-      <Icons icons={PageSectionIcons} imgsPath='assets/iconFinderImages/'/>
-      <Education id='education' title='BAYLOR UNIVERSITY'
-                 titleColor='#fecb00' backgroundColor='#003015'
-                 paragraph={require('../assets/baylorParagraph.txt')}
-                 img={require('../assets/judgeBaylor.jpg')}
-                 alt={'Judge Baylor Picture'}/>
-      <Education title='LONE STAR COLLEGE' titleColor='#b30838' backgroundColor='#003768'
-                 paragraph={require('../assets/lonestarParagraph.txt')}
-                 img={require('../assets/lscGraduation.jpg')}
-                 alt={'LSC Graduation Picture'} reverse='true'/>
-      <Icons icons={ProgrammingLangIcons} imgsPath='assets/progLangs/'/>
-    </div>
-  )
-}
