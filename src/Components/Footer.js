@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles, Typography } from '@material-ui/core';
 
+export const JWQuote = '"It\'s all good." - JW';
+
 const useStyles = makeStyles(() => ({
   footerCredits: {
     paddingBottom: '1.85em',
@@ -13,7 +15,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-export default function Header() {
+export default function Footer(props) {
   const {footerCredits, footerLine} = useStyles();
   
   return (
@@ -22,7 +24,7 @@ export default function Header() {
         <p>&nbsp;</p>
         <hr className={footerLine}/>
         <Typography className={footerCredits}>
-          "It's all good." - JW<br/>&copy; 2020 Andrew Case
+          {props.quote}<br/>&copy; 2021 Andrew Case
         </Typography>
       </footer>
     </div>

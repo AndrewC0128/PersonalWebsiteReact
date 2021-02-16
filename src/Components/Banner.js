@@ -2,6 +2,19 @@ import React from 'react';
 import backgroundImage from '../assets/blueridge.jpg'
 import { makeStyles, Typography } from '@material-ui/core';
 
+export default function Banner(props) {
+  const {background, overlay} = useStyles();
+
+  return (
+    <div className={background}>
+      <div className={overlay}>
+        <Typography variant="h1">{props.title}</Typography>
+        <Typography variant="subtitle1" style={{marginTop: '80px'}}>{props.subtitle}</Typography>
+      </div>
+    </div>
+  )
+}
+
 const useStyles = makeStyles(() => ({
   background: {
     backgroundRepeat: 'no-repeat',
@@ -24,16 +37,3 @@ const useStyles = makeStyles(() => ({
     color: '#ffffff'
   },
 }));
-
-export default function Banner(props) {
-  const {background, overlay} = useStyles();
-
-  return (
-    <div className={background}>
-      <div className={overlay}>
-        <Typography variant="h1">{props.title}</Typography>
-        <Typography variant="subtitle1" style={{marginTop: '80px'}}>{props.subtitle}</Typography>
-      </div>
-    </div>
-  )
-}

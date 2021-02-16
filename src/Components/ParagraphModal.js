@@ -1,16 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Modal, makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
-  modalStyling: {
-    position: 'absolute',
-    width: '800px',
-    backgroundColor: 'white',
-    border: '2px solid #000',
-    padding: theme.spacing(2, 4, 3),
-  },
-}));
-
 export default function ParagraphModal(props) {
   const {modalStyling} = useStyles();
 
@@ -29,7 +19,7 @@ export default function ParagraphModal(props) {
     }
   }, [props.open])
 
-  const body = (
+  const bodyParagraph = (
     <div className={modalStyling}>
       <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
         <div>
@@ -53,8 +43,18 @@ export default function ParagraphModal(props) {
   return (
     <div>
       <Modal open={open} onClose={handleClose} style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
-        {body}
+        {bodyParagraph}
       </Modal>
     </div>
   )
 }
+
+const useStyles = makeStyles((theme) => ({
+  modalStyling: {
+    position: 'absolute',
+    width: '800px',
+    backgroundColor: 'white',
+    border: '2px solid #000',
+    padding: theme.spacing(2, 4, 3),
+  }
+}));

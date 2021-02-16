@@ -1,17 +1,19 @@
 import React from 'react';
 import Banner from '../Components/Banner';
-import AboutMe from '../Components/AboutMe';
+import Introduction from '../Components/Introduction';
 import Icons from '../Components/Icons';
 import { setTitle } from '../Helpers';
 
+export const title = 'Home'
+
 export default function Homepage() {
   const subtitle = '"An explorer\'s reward is a view of tomorrow\'s possibilities."'
-  setTitle('Home');
+  setTitle(title);
 
   return (
     <>
-      <Banner title="Hi, I'm Andrew Case" subtitle={subtitle}/>
-      <AboutMe/>
+      <Banner title='Hi, I&apos;m Andrew Case' subtitle={subtitle}/>
+      <Introduction/>
       <Icons icons={AboutIcons} imgsPath='assets/iconFinderImages/' imgWidth={64}/>
     </>
   )
@@ -24,9 +26,9 @@ const AboutIcons = [
     href: '/background#education'
   },
   {
-    label: 'Programming Background',
-    img: 'exp.png',
-    href: 'exp'
+    label: 'Programming Oreinted',
+    img: 'code.png',
+    href: '/background#work'
   },
   {
     label: 'Honor Society Scholar',
@@ -34,19 +36,19 @@ const AboutIcons = [
     href: '/background#education'
   },
   {
-    label: 'Dean\'s List',
-    img: 'list.png',
-    href: 'list'
+    label: 'Fitness Enthusiast',
+    img: 'heartbeat.png',
+    href: '/fitness'
   },
   {
     label: 'Management Experience',
     img: 'mgmt.png',
-    href: 'mgmt'
+    href: '/background#work'
   },
   {
     label: 'Active Community Volunteer',
     img: 'volunteer.png',
-    href: 'volunteer',
+    href: '/background#work',
     lastOne: true
   },
 ]

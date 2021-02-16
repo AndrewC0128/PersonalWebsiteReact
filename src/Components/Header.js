@@ -4,6 +4,9 @@ import { AppBar, Toolbar, Button, makeStyles, IconButton, Icon, Tooltip,
 import jugglerIcon from '../assets/jugglerIcon.png';
 import { EmailOutlined, LinkedIn, GitHub, DescriptionOutlined, KeyboardArrowUp } from '@material-ui/icons';
 import { Link, useHistory } from 'react-router-dom';
+import { title as HomepageTitle } from '../Pages/HomePage';
+import { title as AboutTitle } from '../Pages/AboutMePage';
+import { title as FitnessTitle } from '../Pages/FitnessPage';
 
 const useStyles = makeStyles(() => ({
   logo: {
@@ -137,7 +140,7 @@ export default function Header() {
       </header>
       {scrollTriggered ?
         <Toolbar className={fabLocation}>
-          <Fab color='secondary' size='small' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+          <Fab size='small' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
             <KeyboardArrowUp />
           </Fab>
         </Toolbar> : null}
@@ -149,15 +152,15 @@ const HeaderSize = 64;
 
 const HeaderTabs = [
   {
-    label: 'Home',
+    label: HomepageTitle,
     href: '/',
   },
   {
-    label: 'Background',
-    href: '/background',
+    label: AboutTitle,
+    href: '/about',
   },
   {
-    label: 'Fitness',
+    label: FitnessTitle,
     href: '/fitness',
   }
 ]
