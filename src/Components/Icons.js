@@ -1,15 +1,20 @@
 import React from 'react';
 import { Button, makeStyles } from '@material-ui/core';
 import { Link, useHistory } from 'react-router-dom';
+import { useViewport } from './Viewport';
+import { mobileViewWidth } from '../Helpers';
 
 export default function Icons(props) {
-  const {rowContainer, icon} = useStyles();
+  const { rowContainer, icon } = useStyles();
   const history = useHistory();
+  const { width } = useViewport();
 
   return (
-    <div className={rowContainer}>
+    <div className={rowContainer} style={{flexWrap: width < mobileViewWidth ?  'wrap' : null}}>
       {props.icons.map(({label, img, href, lastOne}) => (
-        <div key={label} className={icon} style={{borderRight: (!lastOne && props.lines !== false) ? '1px solid black' : null}}>
+        <div key={label} className={icon}
+             style={{borderRight: (!lastOne && props.lines !== false) ? '1px solid black' : null,
+                     flexBasis: width < mobileViewWidth ?  '33%' : null}}>
           <Button {...{
             key: href ? href : `id${label}`,
             to: href ? href : history.location.pathname,
@@ -32,7 +37,7 @@ export const useStyles = makeStyles(() => ({
     display: 'flex',
     justifyContent: 'space-evenly',
     padding: '3% 15% 3% 15%',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   icon: {
     flex: 1,
