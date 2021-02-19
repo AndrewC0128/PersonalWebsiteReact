@@ -6,7 +6,8 @@ import { EmailOutlined, LinkedIn, GitHub, DescriptionOutlined, KeyboardArrowUp }
 import { Link, useHistory } from 'react-router-dom';
 import { title as HomepageTitle } from '../Pages/HomePage';
 import { title as AboutTitle } from '../Pages/AboutMePage';
-import { title as FitnessTitle } from '../Pages/FitnessPage';
+import { HeaderBarSize } from '../Helpers';
+// import { title as FitnessTitle } from '../Pages/FitnessPage';
 
 const useStyles = makeStyles(() => ({
   logo: {
@@ -22,7 +23,7 @@ const useStyles = makeStyles(() => ({
     color: 'white',
     display: 'flex',
     justifyContent: 'space-between',
-    height: HeaderSize
+    height: HeaderBarSize
   },
   headerIconButton: {
     color: 'inherit'
@@ -76,7 +77,7 @@ export default function Header() {
           const reqElement = document.getElementById(location.hash.substr(1));
           if (reqElement) {
             // Note getBoundingClientRect() gives you the element's difference from top of screen, not page
-            const locationOnPage = reqElement.getBoundingClientRect().top - HeaderSize + window.scrollY;
+            const locationOnPage = reqElement.getBoundingClientRect().top - HeaderBarSize + window.scrollY;
             window.scrollTo({top: locationOnPage, behavior: 'smooth'});
           }
         }, 500)
@@ -147,8 +148,6 @@ export default function Header() {
     </div>
   );
 }
-
-const HeaderSize = 64;
 
 const HeaderTabs = [
   {

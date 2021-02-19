@@ -52,7 +52,7 @@ export default function ParagraphModal(props) {
 const useStyles = makeStyles((theme) => ({
   modalStyling: {
     position: 'absolute',
-    width: '800px',
+    width: '850px',
     backgroundColor: 'white',
     border: '2px solid #000',
     padding: theme.spacing(2, 4, 3),

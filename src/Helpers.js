@@ -11,3 +11,5 @@ export function setTitle(page) {
 }
 
 export const mobileViewWidth = 620;
+
+export const HeaderBarSize = 64;
