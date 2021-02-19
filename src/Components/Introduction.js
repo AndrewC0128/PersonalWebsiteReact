@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react';
-import profilePicture from '../assets/profilePicture.jpg'
+import profilePicture from '../assets/profilePicture.jpg';
+import mobileProfilePicture from '../assets/mobileProfilePicture.png';
 import { makeStyles, Typography } from '@material-ui/core';
-import { getParagraph } from '../Helpers';
+import { getParagraph, mobileViewWidth } from '../Helpers';
+import { useViewport } from './Viewport';
 
 export default function Introduction() {
   const {background, title, paragraph} = useStyles();
+  const { width } = useViewport();
 
   // Set paragraph text from file
   const [paragraphText, setText] = useState('');
@@ -17,19 +20,20 @@ export default function Introduction() {
   return (
     <div className={background}>
       <div className={paragraph}>
-          <Typography variant='h2' className={title}>Introduction</Typography>
-          {paragraphText}
-          <p style={{textAlign: 'center'}}>
-            Post-Graduation Employment:
-            <a target='_blank' rel='noopener noreferrer' href='https://www.paycom.com/'>
-              <img src='https://www.paycom.com/images/paycom-logo-black-clear.png?ver=1.2' alt='paycom-logo-black-clear' style={{maxWidth: '200px'}}/>
-            </a>
-          </p>
-          <p>
-            Please contact me via email by clicking the envelope icon in the upper right side of the screen.
-          </p>
+        {width < mobileViewWidth ? <div style={{textAlign: 'center'}}><img src={mobileProfilePicture} alt='Me'/></div> : null}
+        <Typography variant='h2' className={title}>Introduction</Typography>
+        {paragraphText}
+        <p style={{textAlign: 'center'}}>
+          Post-Graduation Employment:
+          <a target='_blank' rel='noopener noreferrer' href='https://www.paycom.com/'>
+            <img src='https://www.paycom.com/images/paycom-logo-black-clear.png?ver=1.2' alt='paycom-logo-black-clear' style={{maxWidth: '200px'}}/>
+          </a>
+        </p>
+        <p>
+          Please contact me via email by clicking the envelope icon in the upper right side of the screen.
+        </p>
       </div>
-      <img src={profilePicture} alt='Me' style={{ borderRadius: '8px', maxWidth: '400px'}}/>
+      {width < mobileViewWidth ? null : <img src={profilePicture} alt='Me' style={{ borderRadius: '8px', maxWidth: '400px'}}/>}
     </div>
   )
 }
