@@ -12,7 +12,7 @@ export default function Homepage() {
 
   return (
     <>
-      <Banner title='Hi, I&apos;m Andrew Case' subtitle={subtitle}/>
+      <Banner title='Hi, I&apos;m Andrew Case.' subtitle={subtitle} typing={true}/>
       <Introduction/>
       <Icons icons={AboutIcons} imgsPath='assets/iconFinderImages/' imgWidth={64}/>
     </>
@@ -23,17 +23,17 @@ const AboutIcons = [
   {
     label: 'College Degreed',
     img: 'degreed.png',
-    href: '/background#education'
+    href: '/about#education'
   },
   {
     label: 'Programming Oreinted',
     img: 'code.png',
-    href: '/background#work'
+    href: '/about#work'
   },
   {
     label: 'Honor Society Scholar',
     img: 'honor.png',
-    href: '/background#education'
+    href: '/about#education'
   },
   {
     label: 'Fitness Enthusiast',
@@ -43,12 +43,12 @@ const AboutIcons = [
   {
     label: 'Management Experience',
     img: 'mgmt.png',
-    href: '/background#work'
+    href: '/about#work'
   },
   {
     label: 'Active Community Volunteer',
     img: 'volunteer.png',
-    href: '/background#work',
+    href: '/about#work',
     lastOne: true
   },
 ]

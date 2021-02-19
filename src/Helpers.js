@@ -9,3 +9,5 @@ export function getParagraph(filePath) {
 export function setTitle(page) {
   document.title = `${page} - Andrew Case`
 }
+
+export const mobileViewWidth = 620;

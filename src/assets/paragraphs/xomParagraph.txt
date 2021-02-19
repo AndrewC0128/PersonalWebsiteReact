@@ -1,1 +1,4 @@
-This is where I went to XOM virtually. :)
+• Developed a custom add-in for Outlook for scheduling meetings across campuses/properties using Angular & C#
+• Assimilated to team standards/technology, with an emphasis on the Scrum framework and weekly demos
+• Interviewed clients to gain perspective, promoting: ease of use, user-centered design, and use cases for testing
+• Documented and used a multi-layered application architecture for APIs

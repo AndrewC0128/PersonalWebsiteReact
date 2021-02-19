@@ -83,7 +83,7 @@ export default function Header() {
       }
       changeCurrentPage(location.pathname);
     }) 
-  },[history, currentPage])
+  }, [history, currentPage])
 
   const getHeaderButtons = () => {
     return (
@@ -159,10 +159,10 @@ const HeaderTabs = [
     label: AboutTitle,
     href: '/about',
   },
-  {
-    label: FitnessTitle,
-    href: '/fitness',
-  }
+  // {
+  //   label: FitnessTitle,
+  //   href: '/fitness',
+  // }
 ]
 
 const HeaderIcons = [
