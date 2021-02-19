@@ -172,7 +172,7 @@ export default function Header() {
     )
   }
   
-  return (width < mobileViewWidth ? <mobileView/> : <webView/>);
+  return (width < mobileViewWidth ? mobileView() : webView());
 }
 
 const HeaderTabs = [
