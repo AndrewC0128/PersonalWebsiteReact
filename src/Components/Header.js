@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { AppBar, Toolbar, Button, makeStyles, IconButton, Icon, Tooltip,
-  Fab } from '@material-ui/core';
+import { AppBar, Toolbar, Button, makeStyles, IconButton, Icon, Tooltip, Fab } from '@material-ui/core';
 import jugglerIcon from '../assets/jugglerIcon.png';
 import { EmailOutlined, LinkedIn, GitHub, DescriptionOutlined, KeyboardArrowUp } from '@material-ui/icons';
 import { Link, useHistory } from 'react-router-dom';
 import { title as HomepageTitle } from '../Pages/HomePage';
 import { title as AboutTitle } from '../Pages/AboutMePage';
-import { HeaderBarSize } from '../Helpers';
-// import { title as FitnessTitle } from '../Pages/FitnessPage';
+import { HeaderBarSize, mobileViewWidth } from '../Helpers';
+import { useViewport } from './Viewport';
 
 const useStyles = makeStyles(() => ({
   logo: {
@@ -40,6 +39,7 @@ const useStyles = makeStyles(() => ({
 
 export default function Header() {
   const {logo, headerPageButton, headerIconButton, toolbar, fabLocation} = useStyles();
+  const { width } = useViewport();
 
   // Scroll Tracking
   const previousY = useRef(0);
@@ -127,26 +127,52 @@ export default function Header() {
       </div>
     )
   }
+
+  const mobileView = () => {
+    return(
+      <div>
+        <header>
+          <AppBar color={scrollTriggered ? 'default' : 'transparent'}>
+            <Toolbar className={toolbar}>
+              {getHeaderButtons()}
+              <img src={jugglerIcon} alt='Technology Juggler Icon' className={logo}/>
+              {getHeaderIcons()}
+            </Toolbar>
+          </AppBar>
+        </header>
+        {scrollTriggered ?
+          <Toolbar className={fabLocation}>
+            <Fab size='small' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+              <KeyboardArrowUp />
+            </Fab>
+          </Toolbar> : null}
+      </div>
+    )
+  }
+
+  const webView = () => {
+    return(
+      <div>
+        <header>
+          <AppBar color={scrollTriggered ? 'default' : 'transparent'}>
+            <Toolbar className={toolbar}>
+              {getHeaderButtons()}
+              <img src={jugglerIcon} alt='Technology Juggler Icon' className={logo}/>
+              {getHeaderIcons()}
+            </Toolbar>
+          </AppBar>
+        </header>
+        {scrollTriggered ?
+          <Toolbar className={fabLocation}>
+            <Fab size='small' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+              <KeyboardArrowUp />
+            </Fab>
+          </Toolbar> : null}
+      </div>
+    )
+  }
   
-  return (
-    <div>
-      <header>
-        <AppBar color={scrollTriggered ? 'default' : 'transparent'}>
-          <Toolbar className={toolbar}>
-            {getHeaderButtons()}
-            <img src={jugglerIcon} alt='Technology Juggler Icon' className={logo}/>
-            {getHeaderIcons()}
-          </Toolbar>
-        </AppBar>
-      </header>
-      {scrollTriggered ?
-        <Toolbar className={fabLocation}>
-          <Fab size='small' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-            <KeyboardArrowUp />
-          </Fab>
-        </Toolbar> : null}
-    </div>
-  );
+  return (width < mobileViewWidth ? <mobileView/> : <webView/>);
 }
 
 const HeaderTabs = [
