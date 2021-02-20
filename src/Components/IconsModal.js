@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import { Button } from '@material-ui/core';
 import ParagraphModal from './ParagraphModal';
 import { useStyles } from './Icons';
+import { useViewport } from './Viewport';
+import { mobileViewWidth } from '../Helpers';
 
 export default function IconsModal(props) {
   const {rowContainer, icon} = useStyles();
   const [openModal, setOpenModal] = useState({});
+  const { width } = useViewport();
 
   return (
-    <div className={rowContainer} style={{padding: '0% 5% 0% 5%', /*borderBottom: '2pt solid black'*/}}>
+    <div className={rowContainer} style={{padding: '0% 5% 0% 5%', flexWrap: width < mobileViewWidth ?  'wrap' : null /*borderBottom: '2pt solid black'*/}}>
       {props.icons.map(({id, date, label, img, paragraph}) => (
         <div key={id} className={icon}>
           <Button key={label} style={{maxWidth: props.imgWidth, maxHeight: props.imgHeight, backgroundColor: 'transparent'}}
@@ -20,7 +23,7 @@ export default function IconsModal(props) {
           {props.showLabel === false ? null : label }
         </div>
       ))}
-      <ParagraphModal open={openModal}/>
+      <ParagraphModal open={openModal} imgSize={[props.imgHeight, props.imgWidth]}/>
     </div>
   )
 }
