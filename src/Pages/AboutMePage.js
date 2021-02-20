@@ -20,7 +20,7 @@ export default function AboutMePage() {
     paragraph: require('../assets/paragraphs/lonestarParagraph.txt'), img: require('../assets/lscGraduation.jpg'),
     alt: 'LSC Graduation Picture', reverse: 'true'}
 
-  function getHeader(title, id) {
+  function getSectionHeader(title, id) {
     return (
       <div id={id} style={{textAlign: 'center'}}>
         <Typography variant='h6'>{title}</Typography>
@@ -35,11 +35,11 @@ export default function AboutMePage() {
       <Education {...BUProps}/>
       <Education {...LSCProps}/>
       <br/>
-      {getHeader('EMPLOYERS', 'work')}
+      {getSectionHeader('PREVIOUS EMPLOYERS', 'work')}
       <IconsModal icons={Employers} imgsPath='assets/employers/' imgWidth={250} imgHeight={200} showLabel={false}/>
-      {getHeader('LANGUAGES')}
+      {getSectionHeader('PROGRAMMING EXPERIENCE')}
       <Icons icons={ProgrammingLangIcons} imgsPath='assets/progLangs/' imgWidth={115} lines={false} showLabel={false}/>
-      {getHeader('AFFILIATIONS')}
+      {getSectionHeader('AFFILIATIONS & VOLUNTEER WORK')}
       <br/><br/>
       <IconsModal icons={Affiliations} imgsPath='assets/employers/' imgWidth={150} imgHeight={150} showLabel={false}/>
       <br/>

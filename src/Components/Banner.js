@@ -4,8 +4,9 @@ import { makeStyles, Typography } from '@material-ui/core';
 import { init } from 'ityped'
 
 const titles = [
-  'Baylor Graduate',
-  'Software Developer'
+  'Baylor Student',
+  'Software Developer',
+  'Lone Star College Alumnus'
 ]
 
 export default function Banner(props) {

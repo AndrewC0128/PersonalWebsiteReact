@@ -30,7 +30,7 @@ export default function Introduction() {
           </a>
         </p>
         <p>
-          Please contact me via email by clicking the envelope icon in the upper right side of the screen.
+          Please contact me via email by clicking the envelope icon in the upper right.
         </p>
       </div>
       {width < mobileViewWidth ? null : <img src={profilePicture} alt='Me' style={{ borderRadius: '8px', maxWidth: '400px'}}/>}
