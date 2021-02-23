@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { AppBar, Toolbar, Button, makeStyles, IconButton, Icon, Tooltip, Fab, Drawer, MenuItem } from '@material-ui/core';
 import jugglerIcon from '../assets/jugglerIcon.png';
-import { EmailOutlined, LinkedIn, GitHub, DescriptionOutlined, KeyboardArrowUp, Menu } from '@material-ui/icons';
+import { EmailOutlined, LinkedIn, GitHub, DescriptionOutlined, KeyboardArrowUp, Menu, Apps } from '@material-ui/icons';
 import { Link, useHistory } from 'react-router-dom';
 import { title as HomepageTitle } from '../Pages/HomePage';
 import { title as AboutTitle } from '../Pages/AboutMePage';
@@ -46,7 +46,8 @@ export default function Header() {
   
   // Mobile View Handling
   const { width } = useViewport();
-  const [drawer, handleDrawer] = useState(false);
+  const [buttonDrawer, handleButtonDrawer] = useState(false);
+  const [iconDrawer, handleIconDrawer] = useState(false);
 
   // Scroll Tracking
   const previousY = useRef(0);
@@ -102,7 +103,8 @@ export default function Header() {
             color: 'inherit',
             to: href,
             component: Link,
-            className: headerPageButton
+            className: headerPageButton,
+            onClick: () => handleButtonDrawer(false)
           }} style={{color: width < mobileViewWidth ? null : (scrollTriggered ? 'black' : 'white')}}>
             {width < mobileViewWidth ? <MenuItem>{label}</MenuItem> : <>{label}</>}
           </Button>
@@ -113,7 +115,7 @@ export default function Header() {
 
   const getHeaderIcons = () => {
     return (
-      <div style={{flex: 1, textAlign: 'right'}}>
+      <>
         {HeaderIcons.map(({label, url, component, downloadName}) => (
           <Tooltip title={label} key={label}>
             <IconButton {...{
@@ -123,39 +125,59 @@ export default function Header() {
               rel: 'noopener noreferrer',
               href: url,
               download: downloadName,
-              className: headerIconButton
+              className: headerIconButton,
+              onClick: () => handleIconDrawer(false)
             }}>
-            <Icon style={{color: scrollTriggered ? 'black' : 'white'}}>
+            <Icon style={{color: width < mobileViewWidth ? null : (scrollTriggered ? 'black' : 'white')}}>
               {component}
             </Icon>
             </IconButton>
           </Tooltip>
         ))}
-      </div>
+      </>
     )
   }
 
   const mobileView = () => {
     return(
       <>
-        <IconButton {...{
-          edge: 'start',
-          color: 'inherit',
-          'aria-label': 'menu',
-          'aria-haspopup': 'true',
-          onClick: () => handleDrawer(true)
-        }}>
-          <Menu/>
-        </IconButton>
-        <Drawer {...{
-          anchor: 'left',
-          open: drawer,
-          onClose: () => handleDrawer(false) 
-        }}>
-          {getHeaderButtons()}
-        </Drawer>
+        <div style={{flex: 1, textAlign: 'left'}}>
+          <IconButton {...{
+            edge: 'start',
+            color: 'inherit',
+            // 'aria-label': 'menu',
+            // 'aria-haspopup': 'true',
+            onClick: () => handleButtonDrawer(true)
+          }}>
+            <Menu style={{color: scrollTriggered ? 'black' : 'white'}}/>
+          </IconButton>
+          <Drawer {...{
+            anchor: 'left',
+            open: buttonDrawer,
+            onClose: () => handleButtonDrawer(false) 
+          }}>
+            {getHeaderButtons()}
+          </Drawer>
+        </div>
         <img src={jugglerIcon} alt='Technology Juggler Icon' className={logo}/>
-        {getHeaderIcons()}
+        <div style={{flex: 1, textAlign: 'right'}}>
+          <IconButton {...{
+            edge: 'start',
+            color: 'inherit',
+            // 'aria-label': 'menu',
+            // 'aria-haspopup': 'true',
+            onClick: () => handleIconDrawer(true)
+          }}>
+            <Apps style={{color: scrollTriggered ? 'black' : 'white'}}/>
+          </IconButton>
+          <Drawer {...{
+            anchor: 'right',
+            open: iconDrawer,
+            onClose: () => handleIconDrawer(false) 
+          }}>
+            {getHeaderIcons()}
+          </Drawer>
+        </div>
       </>
     )
   }
@@ -167,7 +189,9 @@ export default function Header() {
           {getHeaderButtons()}
         </div>
         <img src={jugglerIcon} alt='Technology Juggler Icon' className={logo}/>
-        {getHeaderIcons()}
+        <div style={{flex: 1, textAlign: 'right'}}>
+          {getHeaderIcons()}
+        </div>
       </>
     )
   }
