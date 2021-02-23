@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { AppBar, Toolbar, Button, makeStyles, IconButton, Icon, Tooltip, Fab } from '@material-ui/core';
+import { AppBar, Toolbar, Button, makeStyles, IconButton, Icon, Tooltip, Fab, Drawer, MenuItem } from '@material-ui/core';
 import jugglerIcon from '../assets/jugglerIcon.png';
-import { EmailOutlined, LinkedIn, GitHub, DescriptionOutlined, KeyboardArrowUp } from '@material-ui/icons';
+import { EmailOutlined, LinkedIn, GitHub, DescriptionOutlined, KeyboardArrowUp, Menu } from '@material-ui/icons';
 import { Link, useHistory } from 'react-router-dom';
 import { title as HomepageTitle } from '../Pages/HomePage';
 import { title as AboutTitle } from '../Pages/AboutMePage';
@@ -22,7 +22,11 @@ const useStyles = makeStyles(() => ({
     color: 'white',
     display: 'flex',
     justifyContent: 'space-between',
-    height: HeaderBarSize
+    height: HeaderBarSize,
+    // paddingLeft is 0 when the screen is less than 900px
+    // '@media (max-width: 900px)': {
+    //   paddingLeft: 0
+    // }
   },
   headerIconButton: {
     color: 'inherit'
@@ -39,7 +43,10 @@ const useStyles = makeStyles(() => ({
 
 export default function Header() {
   const {logo, headerPageButton, headerIconButton, toolbar, fabLocation} = useStyles();
+  
+  // Mobile View Handling
   const { width } = useViewport();
+  const [drawer, handleDrawer] = useState(false);
 
   // Scroll Tracking
   const previousY = useRef(0);
@@ -62,7 +69,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrollTriggered])
 
-  // Used for dynamic routing with anchors
+  // Dynamic Routing with Anchors
   const history = useHistory();
   const [currentPage, changeCurrentPage] = useState('/');
   useEffect(() => {
@@ -88,7 +95,7 @@ export default function Header() {
 
   const getHeaderButtons = () => {
     return (
-      <div style={{flex: 1, textAlign: 'left'}}>
+      <>
         {HeaderTabs.map(({label, href}) => (
           <Button {...{
             key: label,
@@ -96,11 +103,11 @@ export default function Header() {
             to: href,
             component: Link,
             className: headerPageButton
-          }} style={{color: scrollTriggered ? 'black' : 'white'}}>
-            {label}
+          }} style={{color: width < mobileViewWidth ? null : (scrollTriggered ? 'black' : 'white')}}>
+            {width < mobileViewWidth ? <MenuItem>{label}</MenuItem> : <>{label}</>}
           </Button>
         ))}
-      </div>
+      </>
     )
   }
 
@@ -130,49 +137,58 @@ export default function Header() {
 
   const mobileView = () => {
     return(
-      <div>
-        <header>
-          <AppBar color={scrollTriggered ? 'default' : 'transparent'}>
-            <Toolbar className={toolbar}>
-              {getHeaderButtons()}
-              <img src={jugglerIcon} alt='Technology Juggler Icon' className={logo}/>
-              {getHeaderIcons()}
-            </Toolbar>
-          </AppBar>
-        </header>
-        {scrollTriggered ?
-          <Toolbar className={fabLocation}>
-            <Fab size='small' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-              <KeyboardArrowUp />
-            </Fab>
-          </Toolbar> : null}
-      </div>
+      <>
+        <IconButton {...{
+          edge: 'start',
+          color: 'inherit',
+          'aria-label': 'menu',
+          'aria-haspopup': 'true',
+          onClick: () => handleDrawer(true)
+        }}>
+          <Menu/>
+        </IconButton>
+        <Drawer {...{
+          anchor: 'left',
+          open: drawer,
+          onClose: () => handleDrawer(false) 
+        }}>
+          {getHeaderButtons()}
+        </Drawer>
+        <img src={jugglerIcon} alt='Technology Juggler Icon' className={logo}/>
+        {getHeaderIcons()}
+      </>
     )
   }
 
   const webView = () => {
     return(
-      <div>
-        <header>
-          <AppBar color={scrollTriggered ? 'default' : 'transparent'}>
-            <Toolbar className={toolbar}>
-              {getHeaderButtons()}
-              <img src={jugglerIcon} alt='Technology Juggler Icon' className={logo}/>
-              {getHeaderIcons()}
-            </Toolbar>
-          </AppBar>
-        </header>
-        {scrollTriggered ?
-          <Toolbar className={fabLocation}>
-            <Fab size='small' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-              <KeyboardArrowUp />
-            </Fab>
-          </Toolbar> : null}
-      </div>
+      <>
+        <div style={{flex: 1, textAlign: 'left'}}>
+          {getHeaderButtons()}
+        </div>
+        <img src={jugglerIcon} alt='Technology Juggler Icon' className={logo}/>
+        {getHeaderIcons()}
+      </>
     )
   }
   
-  return (width < mobileViewWidth ? mobileView() : webView());
+  return (
+    <div>
+      <header>
+        <AppBar color={scrollTriggered ? 'default' : 'transparent'}>
+          <Toolbar className={toolbar}>
+            {width < mobileViewWidth ? mobileView() : webView()}
+          </Toolbar>
+        </AppBar>
+      </header>
+      {scrollTriggered ?
+        <Toolbar className={fabLocation}>
+          <Fab size='small' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+            <KeyboardArrowUp />
+          </Fab>
+        </Toolbar> : null}
+    </div>
+  )
 }
 
 const HeaderTabs = [
@@ -193,7 +209,7 @@ const HeaderTabs = [
 const HeaderIcons = [
   {
     label: 'Email',
-    url: 'mailto:andrew_case1@baylor.edu',
+    url: 'mailto:andrewc0128@gmail.com',
     component: <EmailOutlined/>,
   },
   {

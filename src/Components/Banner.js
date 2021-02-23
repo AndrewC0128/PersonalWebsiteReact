@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import backgroundImage from '../assets/blueridge.jpg'
 import { makeStyles, Typography } from '@material-ui/core';
-import { init } from 'ityped'
+import { init as Typist} from 'ityped'
 
 const titles = [
   'Baylor Student',
@@ -15,7 +15,7 @@ export default function Banner(props) {
   useEffect(() => {
     if (props.typing) {
       const typingElement = document.querySelector('#typingElement');
-      init(typingElement, { showCursor: true, strings: titles})
+      Typist(typingElement, { showCursor: true, strings: titles})
     }
   }, [])
 

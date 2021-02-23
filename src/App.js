@@ -9,8 +9,8 @@ import { JWQuote } from './Components/Footer';
 import Homepage from './Pages/HomePage';
 
 export default function App() {
+  // Allows the footer quote to be changed dynamically
   const [footerQuote, setFooterQuote] = useState(JWQuote);
-
   function changeFooter(quote) {
     setFooterQuote(quote);
   }
