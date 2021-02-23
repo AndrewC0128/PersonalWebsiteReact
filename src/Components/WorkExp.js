@@ -1,15 +1,7 @@
+// This file is not currently being used in the project
 import React, { useState, useEffect } from 'react';
 import { Button, makeStyles, Typography } from '@material-ui/core';
 import { getParagraph } from '../Helpers';
-
-const useStyles = makeStyles(() => ({
-  employerSection: {
-    display: 'flex',
-    flexDirection: 'row',
-    textAlign: 'center',
-    alignItems: 'center'
-  }
-}))
 
 export default function WorkExp() {
   const {employerSection} = useStyles();
@@ -48,6 +40,15 @@ export default function WorkExp() {
     </div>
   )
 }
+
+const useStyles = makeStyles(() => ({
+  employerSection: {
+    display: 'flex',
+    flexDirection: 'row',
+    textAlign: 'center',
+    alignItems: 'center'
+  }
+}))
 
 const imgsPath = 'assets/employers/';
 const paragraphPath = 'assets/paragraphs/';

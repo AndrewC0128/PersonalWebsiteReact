@@ -18,7 +18,7 @@ export default function NotFound(props) {
 
   return (
     <div style={{textAlign: 'center'}}>
-      <Banner title='Page Not Found :/' subtitle={subtitle}/>
+      <Banner title='Page Not Found' subtitle={subtitle}/>
       <img src={travolta} alt='Travolta' className={img}/>
     </div>
   )

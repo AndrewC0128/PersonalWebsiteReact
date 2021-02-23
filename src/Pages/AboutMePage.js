@@ -40,7 +40,8 @@ export default function AboutMePage() {
       {getSectionHeader('PROGRAMMING EXPERIENCE')}
       <Icons icons={ProgrammingLangIcons} imgsPath='assets/progLangs/' imgWidth={115} lines={false} showLabel={false}/>
       {getSectionHeader('AFFILIATIONS & VOLUNTEER WORK')}
-      <br/><br/>
+      <br/>
+      <br/>
       <IconsModal icons={Affiliations} imgsPath='assets/employers/' imgWidth={150} imgHeight={150} showLabel={false}/>
       <br/>
     </>

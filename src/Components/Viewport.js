@@ -1,19 +1,19 @@
-import React from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 
-const viewportContext = React.createContext({});
+const viewportContext = createContext({});
 
 export const ViewportProvider = ({ children }) => {
-  const [width, setWidth] = React.useState(window.innerWidth);
-  const [height, setHeight] = React.useState(window.innerHeight);
+  const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
 
   const handleWindowResize = () => {
     setWidth(window.innerWidth);
     setHeight(window.innerHeight);
   }
 
-  React.useEffect(() => {
-    window.addEventListener("resize", handleWindowResize);
-    return () => window.removeEventListener("resize", handleWindowResize);
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowResize);
+    return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 
   // Store the values in the Provider
@@ -25,6 +25,6 @@ export const ViewportProvider = ({ children }) => {
 };
 
 export const useViewport = () => {
-  const { width, height } = React.useContext(viewportContext);
-  return { width, height };
+  const {width, height} = useContext(viewportContext);
+  return {width, height};
 }
