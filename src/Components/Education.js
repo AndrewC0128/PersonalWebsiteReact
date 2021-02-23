@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import { makeStyles, Typography } from '@material-ui/core';
+import { mobileViewWidth } from '../Helpers';
+import { useViewport } from './Viewport';
 
 export default function Education(props) {
-  const {background, title, paragraph} = useStyles();
+  const {background, title, paragraph, img} = useStyles();
+  const {width} = useViewport();
   
   // Set paragraph text from file
   const [paragraphText, setText] = useState('');
@@ -14,12 +17,14 @@ export default function Education(props) {
 
   return (
     <div className={background} id={props.id}
-         style={{backgroundColor: props.backgroundColor, flexDirection: (props.reverse ? 'row-reverse' : null)}}>
+         style={{backgroundColor: props.backgroundColor,
+                 flexDirection: width < mobileViewWidth ? 'column' : (props.reverse ? 'row-reverse' : null)}}>
+      {width < mobileViewWidth ? <div style={{textAlign: 'center'}}><img src={props.img} alt={props.alt} className={img}/></div> : null}
       <div className={paragraph}>
           <Typography variant='h2' className={title} style={{color: props.titleColor}}>{props.title}</Typography>
           {paragraphText}
       </div>
-      <img src={props.img} alt={props.alt} style={{borderRadius: '8px', maxWidth: '300px'}}/>
+      {width < mobileViewWidth ? null : <img src={props.img} alt={props.alt} className={img}/>}
     </div>
   )
 }
@@ -41,5 +46,9 @@ const useStyles = makeStyles(() => ({
     maxWidth: '400px',
     font: '1.05em/1.8em \'Open Sans\',Arial,Helvetica,sans-serif',
     textAlign: 'center'
+  },
+  img: {
+    borderRadius: '8px',
+    maxWidth: '300px'
   }
 }))

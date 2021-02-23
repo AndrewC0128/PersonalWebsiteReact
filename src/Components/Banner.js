@@ -41,12 +41,12 @@ const useStyles = makeStyles(() => ({
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundImage: `url(${backgroundImage})`,
-    width: window.innerWidth,
+    width: '100%',
     height: '450px'
   },
   overlay: {
     backgroundColor: 'rgba(28,28,28, 0.83)',
-    width: window.innerWidth,
+    width: '100%',
     height: 'inherit',
     display: 'flex',
     flexDirection: 'column',
