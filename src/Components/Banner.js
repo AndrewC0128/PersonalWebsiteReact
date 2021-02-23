@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import backgroundImage from '../assets/blueridge.jpg'
+import backgroundImage from '../assets/blueridge.jpg';
 import { makeStyles, Typography } from '@material-ui/core';
-import { init as Typist} from 'ityped'
+import { init as Typist } from 'ityped';
 
 const titles = [
   'Baylor Student',
@@ -52,6 +52,7 @@ const useStyles = makeStyles(() => ({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
+    textAlign: 'center',
     fontFamily: 'Montserrat',
     fontWeight: 400,
     color: '#ffffff'
