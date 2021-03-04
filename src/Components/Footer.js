@@ -23,8 +23,10 @@ export default function Footer(props) {
       <footer>
         <p>&nbsp;</p>
         <hr className={footerLine}/>
-        <Typography className={footerCredits}>
-          {props.quote}<br/>&copy; 2021 Andrew Case
+        <Typography variant='caption'>
+          <div className={footerCredits}>
+            {props.quote}<br/>&copy; 2021 Andrew Case
+          </div>
         </Typography>
       </footer>
     </div>

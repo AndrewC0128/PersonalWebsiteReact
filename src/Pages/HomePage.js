@@ -6,7 +6,7 @@ import { setTitle } from '../Helpers';
 
 export const title = 'Home'
 
-export default function Homepage() {
+export default function HomePage() {
   const subtitle = '"An explorer\'s reward is a view of tomorrow\'s possibilities."'
   setTitle(title);
 
