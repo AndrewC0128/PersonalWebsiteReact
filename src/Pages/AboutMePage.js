@@ -80,6 +80,7 @@ const PageSectionIcons = [
   }
 ]
 
+// Use iOS Image Layout on Imag2icon
 const ProgrammingLangIcons = [
   {
     label: 'C++',
@@ -118,6 +119,10 @@ const ProgrammingLangIcons = [
     img: 'csharp.png'
   },
   {
+    label: 'Spark+Hadoop',
+    img: 'spark+hadoop.png'
+  },
+  {
     label: 'React',
     img: 'react.png',
     lastOne: true
@@ -125,6 +130,7 @@ const ProgrammingLangIcons = [
 ]
 
 const paragraphPath = 'assets/paragraphs/'
+// Use iMessage Image Layout on Imag2icon
 const Employers = [
   {
     id: 'ExxonMobil',
@@ -156,6 +162,7 @@ const Employers = [
   }
 ]
 
+// Use Square Image Layout on Imag2icon
 const Affiliations = [
   {
     id: 'Baylor University Student Government',
