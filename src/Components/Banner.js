@@ -17,7 +17,7 @@ export default function Banner(props) {
       const typingElement = document.querySelector('#typingElement');
       Typist(typingElement, { showCursor: true, strings: titles})
     }
-  }, [])
+  })
 
   return (
     <div className={background}>

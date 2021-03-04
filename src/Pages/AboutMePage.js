@@ -13,12 +13,12 @@ export default function AboutMePage() {
   setTitle(title);
 
   const BUProps = {id: 'education', title: 'BAYLOR UNIVERSITY', titleColor: '#fecb00',
-    backgroundColor: '#003015', paragraph: require('../assets/paragraphs/baylorParagraph.txt'),
-    img: require('../assets/judgeBaylor.jpg'), alt: 'Judge Baylor Picture'}
+    backgroundColor: '#003015', paragraph: require('../assets/paragraphs/baylorParagraph.txt').default,
+    img: require('../assets/judgeBaylor.jpg').default, alt: 'Judge Baylor Picture'}
 
   const LSCProps = {title: 'LONE STAR COLLEGE', titleColor: '#b30838', backgroundColor: '#003768',
-    paragraph: require('../assets/paragraphs/lonestarParagraph.txt'), img: require('../assets/lscGraduation.jpg'),
-    alt: 'LSC Graduation Picture', reverse: 'true'}
+    paragraph: require('../assets/paragraphs/lonestarParagraph.txt').default,
+    img: require('../assets/lscGraduation.jpg').default, alt: 'LSC Graduation Picture', reverse: 'true'}
 
   function getSectionHeader(title, id) {
     return (

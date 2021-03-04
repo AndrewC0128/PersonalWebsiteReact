@@ -13,7 +13,7 @@ export default function WorkExp() {
         setParagraphs(paragraphs => [...paragraphs, result])
       ))
     ))
-  }, [])
+  })
 
   return (
     <div>
@@ -26,7 +26,7 @@ export default function WorkExp() {
             rel: 'noopener noreferrer',
             style: {flex: 1, maxWidth: '250px', maxHeight: '200px'}
           }}>
-            <img key={img} src={require(`../${imgsPath}${img}`)} alt={company}/>
+            <img key={img} src={require(`../${imgsPath}${img}`).default} alt={company}/>
           </Button>
           <div style={{flex: 1, textAlign: 'left', margin: '0% 10% 0% 3%'}}>
             <Typography variant='h5'>{title}</Typography>
