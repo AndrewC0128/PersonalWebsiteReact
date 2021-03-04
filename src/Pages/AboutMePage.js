@@ -13,7 +13,7 @@ export default function AboutMePage () {
   setTitle(title)
 
   const BUProps = {
-    id: 'education',
+    id: 'baylor',
     title: 'BAYLOR UNIVERSITY',
     titleColor: '#fecb00',
     backgroundColor: '#003015',
@@ -23,6 +23,7 @@ export default function AboutMePage () {
   }
 
   const LSCProps = {
+    id: 'lsc',
     title: 'LONE STAR COLLEGE',
     titleColor: '#b30838',
     backgroundColor: '#003768',
@@ -49,9 +50,9 @@ export default function AboutMePage () {
       <br/>
       {getSectionHeader('PREVIOUS EMPLOYERS', 'work')}
       <IconsModal icons={Employers} imgsPath='assets/employers/' imgWidth={250} imgHeight={200} showLabel={false}/>
-      {getSectionHeader('PROGRAMMING EXPERIENCE')}
+      {getSectionHeader('PROGRAMMING EXPERIENCE', 'prog')}
       <Icons icons={ProgrammingLangIcons} imgsPath='assets/progLangs/' imgWidth={115} lines={false} showLabel={false}/>
-      {getSectionHeader('AFFILIATIONS & VOLUNTEER WORK')}
+      {getSectionHeader('AFFILIATIONS & VOLUNTEER WORK', 'volunteer')}
       <br/>
       <br/>
       <IconsModal icons={Affiliations} imgsPath='assets/employers/' imgWidth={150} imgHeight={150} showLabel={false}/>
@@ -64,7 +65,7 @@ const PageSectionIcons = [
   {
     label: 'Education',
     img: 'education.png',
-    href: '#education'
+    href: '#baylor'
   },
   {
     label: 'Work Experience',
@@ -74,7 +75,7 @@ const PageSectionIcons = [
   {
     label: 'Affiliations',
     img: 'affiliations.png',
-    href: '#work',
+    href: '#volunteer',
     lastOne: true
   }
 ]

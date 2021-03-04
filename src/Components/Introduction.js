@@ -15,7 +15,7 @@ export default function Introduction () {
     getParagraph('./assets/paragraphs/aboutMeParagraph.txt').then(result => (
       setText(result)
     ))
-  })
+  }, [])
 
   return (
     <div className={background}>

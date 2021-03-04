@@ -15,9 +15,9 @@ export default function Banner (props) {
   useEffect(() => {
     if (props.typing) {
       const typingElement = document.querySelector('#typingElement')
-      Typist(typingElement, { showCursor: true, strings: titles })
+      Typist(typingElement, { showCursor: true, strings: titles }) // cursorChar: '\u2588'
     }
-  })
+  }, [])
 
   return (
     <div className={background}>

@@ -13,7 +13,7 @@ export default function Education (props) {
     fetch(props.paragraph)
       .then(text => text.text()
         .then(t => setText(t.split('\n').map(str => <p key={str}>{str}</p>))))
-  })
+  }, [])
 
   return (
     <div className={background} id={props.id}

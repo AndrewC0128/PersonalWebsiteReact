@@ -23,22 +23,22 @@ const AboutIcons = [
   {
     label: 'College Degreed',
     img: 'degreed.png',
-    href: '/about#education'
+    href: '/about#lsc'
   },
   {
     label: 'Programming Oreinted',
     img: 'code.png',
-    href: '/about#work'
+    href: '/about#prog'
   },
   {
     label: 'Honor Society Scholar',
     img: 'honor.png',
-    href: '/about#education'
+    href: '/about#baylor'
   },
   {
     label: 'Fitness Enthusiast',
-    img: 'heartbeat.png',
-    href: '/fitness'
+    img: 'heartbeat.png'
+    // href: '/fitness'
   },
   {
     label: 'Management Experience',
@@ -48,7 +48,7 @@ const AboutIcons = [
   {
     label: 'Active Community Volunteer',
     img: 'volunteer.png',
-    href: '/about#work',
+    href: '/about#volunteer',
     lastOne: true
   }
 ]

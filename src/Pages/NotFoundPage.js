@@ -13,7 +13,7 @@ export default function NotFound (props) {
   useEffect(() => {
     props.changeFooter('')
     return () => { props.changeFooter(JWQuote) }
-  })
+  }, [])
 
   return (
     <div style={{ textAlign: 'center' }}>

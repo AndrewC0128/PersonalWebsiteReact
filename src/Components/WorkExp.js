@@ -13,7 +13,7 @@ export default function WorkExp () {
         setParagraphs(paragraphs => [...paragraphs, result])
       ))
     ))
-  })
+  }, [])
 
   return (
     <div>
