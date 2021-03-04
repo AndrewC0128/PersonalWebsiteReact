@@ -1,19 +1,18 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
-import AboutMePage from './Pages/AboutMePage';
-import FitnessPage from './Pages/FitnessPage';
-import NotFound from './Pages/NotFoundPage';
-import { JWQuote } from './Components/Footer';
-import HomePage from './Pages/HomePage';
-import LinksPage from './Pages/LinksPage';
+import React, { useState } from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Header from './Components/Header'
+import Footer, { JWQuote } from './Components/Footer'
+import AboutMePage from './Pages/AboutMePage'
+import FitnessPage from './Pages/FitnessPage'
+import NotFound from './Pages/NotFoundPage'
+import HomePage from './Pages/HomePage'
+import LinksPage from './Pages/LinksPage'
 
-export default function App() {
+export default function App () {
   // Allows the footer quote to be changed dynamically
-  const [footerQuote, setFooterQuote] = useState(JWQuote);
-  function changeFooter(quote) {
-    setFooterQuote(quote);
+  const [footerQuote, setFooterQuote] = useState(JWQuote)
+  function changeFooter (quote) {
+    setFooterQuote(quote)
   }
 
   return (
@@ -27,6 +26,6 @@ export default function App() {
         <Route render={() => <NotFound changeFooter={changeFooter}/>}/>
       </Switch>
       <Footer quote={footerQuote}/>
-	  </BrowserRouter>
-  );
+    </BrowserRouter>
+  )
 }

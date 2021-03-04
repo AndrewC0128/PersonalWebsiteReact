@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import backgroundImage from '../assets/blueridge.jpg';
-import { makeStyles, Typography } from '@material-ui/core';
-import { init as Typist } from 'ityped';
+import React, { useEffect } from 'react'
+import backgroundImage from '../assets/blueridge.jpg'
+import { makeStyles, Typography } from '@material-ui/core'
+import { init as Typist } from 'ityped'
 
 const titles = [
   'Baylor Student',
@@ -9,27 +9,28 @@ const titles = [
   'Lone Star College Alumnus'
 ]
 
-export default function Banner(props) {
-  const {background, overlay} = useStyles();
+export default function Banner (props) {
+  const { background, overlay } = useStyles()
 
   useEffect(() => {
     if (props.typing) {
-      const typingElement = document.querySelector('#typingElement');
-      Typist(typingElement, { showCursor: true, strings: titles})
+      const typingElement = document.querySelector('#typingElement')
+      Typist(typingElement, { showCursor: true, strings: titles })
     }
   })
 
   return (
     <div className={background}>
       <div className={overlay}>
-        {props.typing ? 
-          <>
-            <Typography variant="h4">{props.title}</Typography>
-            <Typography variant="h2">{'I\'m a '}
-              <div id='typingElement' style={{display:'inline'}}/>
-            </Typography>
-          </> : <Typography variant="h2">{props.title}</Typography>}
-        <Typography variant="subtitle1" style={{marginTop: '80px'}}>{props.subtitle}</Typography>
+        {props.typing
+          ? <>
+              <Typography variant="h4">{props.title}</Typography>
+              <Typography variant="h2">{'I\'m a '}
+                <div id='typingElement' style={{ display: 'inline' }}/>
+              </Typography>
+            </>
+          : <Typography variant="h2">{props.title}</Typography>}
+        <Typography variant="subtitle1" style={{ marginTop: '80px' }}>{props.subtitle}</Typography>
       </div>
     </div>
   )
@@ -56,5 +57,5 @@ const useStyles = makeStyles(() => ({
     fontFamily: 'Montserrat',
     fontWeight: 400,
     color: '#ffffff'
-  },
-}));
+  }
+}))

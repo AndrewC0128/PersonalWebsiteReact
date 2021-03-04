@@ -1,28 +1,40 @@
-import React from 'react';
-import Banner from '../Components/Banner';
-import Icons from '../Components/Icons';
-import Education from '../Components/Education';
-import { setTitle, getParagraph } from '../Helpers';
-import IconsModal from '../Components/IconsModal';
-import { Typography } from '@material-ui/core';
+import React from 'react'
+import Banner from '../Components/Banner'
+import Icons from '../Components/Icons'
+import Education from '../Components/Education'
+import { setTitle, getParagraph } from '../Helpers'
+import IconsModal from '../Components/IconsModal'
+import { Typography } from '@material-ui/core'
 
 export const title = 'About Me'
 
-export default function AboutMePage() {
+export default function AboutMePage () {
   const subtitle = '"The roots of education are bitter, but the fruit is sweet." - Aristotle'
-  setTitle(title);
+  setTitle(title)
 
-  const BUProps = {id: 'education', title: 'BAYLOR UNIVERSITY', titleColor: '#fecb00',
-    backgroundColor: '#003015', paragraph: require('../assets/paragraphs/baylorParagraph.txt').default,
-    img: require('../assets/judgeBaylor.jpg').default, alt: 'Judge Baylor Picture'}
+  const BUProps = {
+    id: 'education',
+    title: 'BAYLOR UNIVERSITY',
+    titleColor: '#fecb00',
+    backgroundColor: '#003015',
+    paragraph: require('../assets/paragraphs/baylorParagraph.txt').default,
+    img: require('../assets/judgeBaylor.jpg').default,
+    alt: 'Judge Baylor Picture'
+  }
 
-  const LSCProps = {title: 'LONE STAR COLLEGE', titleColor: '#b30838', backgroundColor: '#003768',
+  const LSCProps = {
+    title: 'LONE STAR COLLEGE',
+    titleColor: '#b30838',
+    backgroundColor: '#003768',
     paragraph: require('../assets/paragraphs/lonestarParagraph.txt').default,
-    img: require('../assets/lscGraduation.jpg').default, alt: 'LSC Graduation Picture', reverse: 'true'}
+    img: require('../assets/lscGraduation.jpg').default,
+    alt: 'LSC Graduation Picture',
+    reverse: 'true'
+  }
 
-  function getSectionHeader(title, id) {
+  function getSectionHeader (title, id) {
     return (
-      <div id={id} style={{textAlign: 'center'}}>
+      <div id={id} style={{ textAlign: 'center' }}>
         <Typography variant='h6'>{title}</Typography>
       </div>
     )
@@ -64,7 +76,7 @@ const PageSectionIcons = [
     img: 'affiliations.png',
     href: '#work',
     lastOne: true
-  },
+  }
 ]
 
 const ProgrammingLangIcons = [
@@ -108,39 +120,39 @@ const ProgrammingLangIcons = [
     label: 'React',
     img: 'react.png',
     lastOne: true
-  },
+  }
 ]
 
-const paragraphPath = 'assets/paragraphs/';
+const paragraphPath = 'assets/paragraphs/'
 const Employers = [
   {
     id: 'ExxonMobil',
     date: 'Summer 2020 Remote Internship',
     label: 'Full Stack Developer Intern',
     img: 'xom.png',
-    paragraph: getParagraph(`./${paragraphPath}xomParagraph.txt`),
+    paragraph: getParagraph(`./${paragraphPath}xomParagraph.txt`)
   },
   {
     id: 'H-E-B',
     date: 'Summer 2019 Internship',
     label: 'Software Engineer Intern',
     img: 'heb.png',
-    paragraph: getParagraph(`./${paragraphPath}hebParagraph.txt`),
+    paragraph: getParagraph(`./${paragraphPath}hebParagraph.txt`)
   },
   {
     id: 'PDQ Restaurants',
     date: 'Oct 2015 - May 2017',
     label: 'Shift Manager',
     img: 'pdq.png',
-    paragraph: getParagraph(`./${paragraphPath}pdqParagraph.txt`),
+    paragraph: getParagraph(`./${paragraphPath}pdqParagraph.txt`)
   },
   {
     id: 'Dunkin Donuts',
     date: 'Mar 2015 - Jun 2016',
     label: 'Shift Leader',
     img: 'dunkin.png',
-    paragraph: getParagraph(`./${paragraphPath}dunkinParagraph.txt`),
-  },
+    paragraph: getParagraph(`./${paragraphPath}dunkinParagraph.txt`)
+  }
 ]
 
 const Affiliations = [
@@ -149,41 +161,41 @@ const Affiliations = [
     date: 'Jul 2020 - May 2021',
     label: 'Web Developer',
     img: 'stugov.png',
-    paragraph: getParagraph(`./${paragraphPath}stugovParagraph.txt`),
+    paragraph: getParagraph(`./${paragraphPath}stugovParagraph.txt`)
   },
   {
     id: 'Computing for Compassion',
     date: 'Sept 2018 - May 2020',
     label: 'Member',
     img: 'c4c.png',
-    paragraph: getParagraph(`./${paragraphPath}c4cParagraph.txt`),
+    paragraph: getParagraph(`./${paragraphPath}c4cParagraph.txt`)
   },
   {
     id: 'Upsilon Pi Epsilon (Baylor University Chapter)',
     date: 'Oct 2018 – Present',
     label: 'Member',
     img: 'upe.png',
-    paragraph: getParagraph(`./${paragraphPath}upeParagraph.txt`),
+    paragraph: getParagraph(`./${paragraphPath}upeParagraph.txt`)
   },
   {
     id: 'Baylor’s Virtual Reality Club',
     date: 'Feb 2018 – May 2018',
     label: 'Founding Member',
     img: 'baylorvr.png',
-    paragraph: getParagraph(`./${paragraphPath}baylorvrParagraph.txt`),
+    paragraph: getParagraph(`./${paragraphPath}baylorvrParagraph.txt`)
   },
   {
     id: 'Phi Theta Kappa (Alpha Rho Mu Chapter)',
     date: 'Mar 2016 – Present',
     label: 'Member',
     img: 'ptk.png',
-    paragraph: getParagraph(`./${paragraphPath}ptkParagraph.txt`),
+    paragraph: getParagraph(`./${paragraphPath}ptkParagraph.txt`)
   },
   {
     id: 'YMCA of Greater Houston',
     date: 'Aug 2017 – Present',
     label: 'Adult Volunteer',
     img: 'ymca.png',
-    paragraph: getParagraph(`./${paragraphPath}ymcaParagraph.txt`),
-  },
+    paragraph: getParagraph(`./${paragraphPath}ymcaParagraph.txt`)
+  }
 ]

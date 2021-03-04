@@ -1,14 +1,14 @@
-import React from 'react';
-import Banner from '../Components/Banner';
-import Introduction from '../Components/Introduction';
-import Icons from '../Components/Icons';
-import { setTitle } from '../Helpers';
+import React from 'react'
+import Banner from '../Components/Banner'
+import Introduction from '../Components/Introduction'
+import Icons from '../Components/Icons'
+import { setTitle } from '../Helpers'
 
 export const title = 'Home'
 
-export default function HomePage() {
+export default function HomePage () {
   const subtitle = '"An explorer\'s reward is a view of tomorrow\'s possibilities."'
-  setTitle(title);
+  setTitle(title)
 
   return (
     <>
@@ -50,5 +50,5 @@ const AboutIcons = [
     img: 'volunteer.png',
     href: '/about#work',
     lastOne: true
-  },
+  }
 ]

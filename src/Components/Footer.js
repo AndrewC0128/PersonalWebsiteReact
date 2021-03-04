@@ -1,7 +1,7 @@
-import React from 'react';
-import { makeStyles, Typography } from '@material-ui/core';
+import React from 'react'
+import { makeStyles, Typography } from '@material-ui/core'
 
-export const JWQuote = '"It\'s all good." - JW';
+export const JWQuote = '"It\'s all good." - JW'
 
 const useStyles = makeStyles(() => ({
   footerCredits: {
@@ -11,13 +11,13 @@ const useStyles = makeStyles(() => ({
   footerLine: {
     width: '188px',
     marginLeft: 'auto',
-    marginRight: 'auto',
+    marginRight: 'auto'
   }
-}));
+}))
 
-export default function Footer(props) {
-  const {footerCredits, footerLine} = useStyles();
-  
+export default function Footer (props) {
+  const { footerCredits, footerLine } = useStyles()
+
   return (
     <div>
       <footer>
@@ -30,5 +30,5 @@ export default function Footer(props) {
         </Typography>
       </footer>
     </div>
-  );
+  )
 }
