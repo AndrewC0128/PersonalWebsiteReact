@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { makeStyles, Typography } from '@material-ui/core'
-import { mobileViewWidth } from '../Helpers'
+import { getParagraph, mobileViewWidth } from '../Helpers'
 import { useViewport } from './Viewport'
 
 export default function Education (props) {
@@ -10,9 +10,7 @@ export default function Education (props) {
   // Set paragraph text from file
   const [paragraphText, setText] = useState('')
   useEffect(() => {
-    fetch(props.paragraph)
-      .then(text => text.text()
-        .then(t => setText(t.split('\n').map(str => <p key={str}>{str}</p>))))
+    getParagraph(props.paragraph).then(text => setText(text))
   }, [])
 
   return (

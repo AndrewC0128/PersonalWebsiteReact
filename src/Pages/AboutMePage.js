@@ -17,7 +17,7 @@ export default function AboutMePage () {
     title: 'BAYLOR UNIVERSITY',
     titleColor: '#fecb00',
     backgroundColor: '#003015',
-    paragraph: require('../assets/paragraphs/baylorParagraph.txt').default,
+    paragraph: './assets/paragraphs/baylorParagraph.txt',
     img: require('../assets/judgeBaylor.jpg').default,
     alt: 'Judge Baylor Picture'
   }
@@ -27,7 +27,7 @@ export default function AboutMePage () {
     title: 'LONE STAR COLLEGE',
     titleColor: '#b30838',
     backgroundColor: '#003768',
-    paragraph: require('../assets/paragraphs/lonestarParagraph.txt').default,
+    paragraph: './assets/paragraphs/lonestarParagraph.txt',
     img: require('../assets/lscGraduation.jpg').default,
     alt: 'LSC Graduation Picture',
     reverse: 'true'
