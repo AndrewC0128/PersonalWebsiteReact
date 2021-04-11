@@ -51,7 +51,7 @@ export default function AboutMePage () {
       {getSectionHeader('PREVIOUS EMPLOYERS', 'work')}
       <IconsModal icons={Employers} imgsPath='assets/employers/' imgWidth={250} imgHeight={200} showLabel={false}/>
       {getSectionHeader('PROGRAMMING EXPERIENCE', 'prog')}
-      <Icons icons={ProgrammingLangIcons} imgsPath='assets/progLangs/' imgWidth={115} lines={false} showLabel={false}/>
+      <Icons icons={ProgrammingLangIcons} imgsPath='assets/progLangs/' imgWidth={100} lines={false} showLabel={false}/>
       {getSectionHeader('AFFILIATIONS & VOLUNTEER WORK', 'volunteer')}
       <br/>
       <br/>

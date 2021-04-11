@@ -1,8 +1,8 @@
 import React from 'react'
-import { Button, makeStyles } from '@material-ui/core'
+import { Button } from '@material-ui/core'
 import { Link, useHistory } from 'react-router-dom'
 import { useViewport } from './Viewport'
-import { mobileViewWidth } from '../Helpers'
+import { mobileViewWidth, useStyles } from '../Helpers'
 
 export default function Icons (props) {
   const { rowContainer, icon } = useStyles()
@@ -30,16 +30,3 @@ export default function Icons (props) {
     </div>
   )
 }
-
-export const useStyles = makeStyles(() => ({
-  rowContainer: {
-    display: 'flex',
-    justifyContent: 'space-evenly',
-    padding: '3% 15% 3% 15%',
-    alignItems: 'center'
-  },
-  icon: {
-    flex: 1,
-    textAlign: 'center'
-  }
-}))

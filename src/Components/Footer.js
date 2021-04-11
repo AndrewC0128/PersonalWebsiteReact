@@ -19,16 +19,14 @@ export default function Footer (props) {
   const { footerCredits, footerLine } = useStyles()
 
   return (
-    <div>
-      <footer>
-        <p>&nbsp;</p>
-        <hr className={footerLine}/>
-        <Typography variant='caption'>
-          <div className={footerCredits}>
-            {props.quote}<br/>&copy; 2021 Andrew Case
-          </div>
-        </Typography>
-      </footer>
-    </div>
+    <footer>
+      <p>&nbsp;</p>
+      <hr className={footerLine}/>
+      <Typography variant='caption'>
+        <div className={footerCredits}>
+          {props.quote}<br/>&copy; 2021 Andrew Case
+        </div>
+      </Typography>
+    </footer>
   )
 }

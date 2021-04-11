@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { Button } from '@material-ui/core'
 import ParagraphModal from './ParagraphModal'
-import { useStyles } from './Icons'
 import { useViewport } from './Viewport'
-import { mobileViewWidth } from '../Helpers'
+import { mobileViewWidth, useStyles } from '../Helpers'
 
 export default function IconsModal (props) {
   const { rowContainer, icon } = useStyles()
