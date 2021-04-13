@@ -24,6 +24,7 @@ export default function LinksPage () {
         {getButton('Titan Referral', 'https://titan.clothing/')}
         {getButton('Instagram', 'https://www.instagram.com/all_lower_case/')}
         {getButton('My Website', 'https://andrewcase.dev/')}
+        {getButton('Baylor StuGov Voting', 'https://www.baylor.edu/student_government/vote')}
       </div>
     </div>
   )
