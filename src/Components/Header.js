@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { AppBar, Toolbar, Button, makeStyles, IconButton, Icon, Tooltip, Fab, Drawer, MenuItem } from '@material-ui/core'
-import jugglerIcon from '../assets/jugglerIcon.png'
+// import jugglerIcon from '../assets/jugglerIcon.png'
 import { EmailOutlined, LinkedIn, GitHub, DescriptionOutlined, KeyboardArrowUp, Menu, Apps } from '@material-ui/icons'
 import { Link, useHistory } from 'react-router-dom'
 import { title as HomepageTitle } from '../Pages/HomePage'
@@ -43,7 +43,7 @@ const useStyles = makeStyles(() => ({
 }))
 
 export default function Header () {
-  const { logo, headerPageButton, headerIconButton, toolbar, fabLocation } = useStyles()
+  const { headerPageButton, headerIconButton, toolbar, fabLocation } = useStyles()
 
   // Mobile View Handling
   const { width } = useViewport()
@@ -118,14 +118,14 @@ export default function Header () {
     return (
       <>
         {HeaderIcons.map(({ label, url, component, downloadName }) => (
-          <Tooltip title={label} key={label}>
+          <Tooltip key={label} title={label}>
             <IconButton {...{
               key: label,
               color: 'inherit',
               target: '_blank',
               rel: 'noopener noreferrer',
               href: url,
-              download: downloadName,
+              // download: downloadName,
               className: headerIconButton,
               onClick: () => handleIconDrawer(false)
             }}>
@@ -160,7 +160,7 @@ export default function Header () {
             {getHeaderButtons()}
           </Drawer>
         </div>
-        <img src={jugglerIcon} alt='Technology Juggler Icon' className={logo}/>
+        {/* <img src={jugglerIcon} alt='Technology Juggler Icon' className={logo}/> */}
         <div style={{ flex: 1, textAlign: 'right' }}>
           <IconButton {...{
             edge: 'start',
@@ -189,7 +189,7 @@ export default function Header () {
         <div style={{ flex: 1, textAlign: 'left' }}>
           {getHeaderButtons()}
         </div>
-        <img src={jugglerIcon} alt='Technology Juggler Icon' className={logo}/>
+        {/* <img src={jugglerIcon} alt='Technology Juggler Icon' className={logo}/> */}
         <div style={{ flex: 1, textAlign: 'right' }}>
           {getHeaderIcons()}
         </div>
@@ -251,7 +251,7 @@ const HeaderIcons = [
   {
     label: 'Resume',
     url: '/Resume_ACASE.pdf',
-    downloadName: 'Resume_ACASE.pdf',
+    // downloadName: 'Resume_ACASE.pdf',
     component: <DescriptionOutlined/>
   }
 ]

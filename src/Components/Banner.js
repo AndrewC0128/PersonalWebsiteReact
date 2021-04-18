@@ -24,13 +24,13 @@ export default function Banner (props) {
       <div className={overlay}>
         {props.typing
           ? <>
-              <Typography variant="h4">{props.title}</Typography>
-              <Typography variant="h2">{'I\'m a '}
+            <Typography variant="h2">{props.title}</Typography>
+              <Typography variant="h4">{'I\'m a '}
                 <div id='typingElement' style={{ display: 'inline' }}/>
               </Typography>
             </>
           : <Typography variant="h2">{props.title}</Typography>}
-        <Typography variant="subtitle1" style={{ marginTop: '80px' }}>{props.subtitle}</Typography>
+        {/* <Typography variant="subtitle1" style={{ marginTop: '80px' }}>{props.subtitle}</Typography> */}
       </div>
     </div>
   )
