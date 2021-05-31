@@ -48,7 +48,7 @@ export default function AboutMePage () {
       <Education {...BUProps}/>
       <Education {...LSCProps}/>
       <br/>
-      {getSectionHeader('PREVIOUS EMPLOYERS', 'work')}
+      {getSectionHeader('EMPLOYERS', 'work')}
       <IconsModal icons={Employers} imgsPath='assets/employers/' imgWidth={250} imgHeight={200} showLabel={false}/>
       {getSectionHeader('PROGRAMMING EXPERIENCE', 'prog')}
       <Icons icons={ProgrammingLangIcons} imgsPath='assets/progLangs/' imgWidth={100} lines={false} showLabel={false}/>
@@ -133,6 +133,12 @@ const paragraphPath = 'assets/paragraphs/'
 // Use iMessage Image Layout on Imag2icon
 const Employers = [
   {
+    id: 'Paycom',
+    date: 'Current',
+    label: 'Software Developer I',
+    img: 'paycom.png'
+  },
+  {
     id: 'ExxonMobil',
     date: 'Summer 2020 Remote Internship',
     label: 'Full Stack Developer Intern',
@@ -145,21 +151,21 @@ const Employers = [
     label: 'Software Engineer Intern',
     img: 'heb.png',
     paragraph: getParagraph(`./${paragraphPath}hebParagraph.txt`)
-  },
-  {
-    id: 'PDQ Restaurants',
-    date: 'Oct 2015 - May 2017',
-    label: 'Shift Manager',
-    img: 'pdq.png',
-    paragraph: getParagraph(`./${paragraphPath}pdqParagraph.txt`)
-  },
-  {
-    id: 'Dunkin Donuts',
-    date: 'Mar 2015 - Jun 2016',
-    label: 'Shift Leader',
-    img: 'dunkin.png',
-    paragraph: getParagraph(`./${paragraphPath}dunkinParagraph.txt`)
   }
+  // {
+  //   id: 'PDQ Restaurants',
+  //   date: 'Oct 2015 - May 2017',
+  //   label: 'Shift Manager',
+  //   img: 'pdq.png',
+  //   paragraph: getParagraph(`./${paragraphPath}pdqParagraph.txt`)
+  // },
+  // {
+  //   id: 'Dunkin Donuts',
+  //   date: 'Mar 2015 - Jun 2016',
+  //   label: 'Shift Leader',
+  //   img: 'dunkin.png',
+  //   paragraph: getParagraph(`./${paragraphPath}dunkinParagraph.txt`)
+  // }
 ]
 
 // Use Square Image Layout on Imag2icon
@@ -180,7 +186,7 @@ const Affiliations = [
   },
   {
     id: 'Upsilon Pi Epsilon (Baylor University Chapter)',
-    date: 'Oct 2018 – Present',
+    date: 'Oct 2018 – May 2021',
     label: 'Member',
     img: 'upe.png',
     paragraph: getParagraph(`./${paragraphPath}upeParagraph.txt`)
@@ -194,14 +200,14 @@ const Affiliations = [
   },
   {
     id: 'Phi Theta Kappa (Alpha Rho Mu Chapter)',
-    date: 'Mar 2016 – Present',
+    date: 'Mar 2016 – May 2017',
     label: 'Member',
     img: 'ptk.png',
     paragraph: getParagraph(`./${paragraphPath}ptkParagraph.txt`)
   },
   {
     id: 'YMCA of Greater Houston',
-    date: 'Aug 2017 – Present',
+    date: 'Aug 2017 – Aug 2018',
     label: 'Adult Volunteer',
     img: 'ymca.png',
     paragraph: getParagraph(`./${paragraphPath}ymcaParagraph.txt`)

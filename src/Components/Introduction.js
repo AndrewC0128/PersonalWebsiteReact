@@ -24,15 +24,16 @@ export default function Introduction () {
         <Typography variant='h2' className={paragraphTitle}>Intro</Typography>
         <hr className={hrLine}/>
         {paragraphText}
-        <p style={{ textAlign: 'center' }}>
+        {/* <p style={{ textAlign: 'center' }}>
           Post-Graduation Employment:
           <a target='_blank' rel='noopener noreferrer' href='https://www.paycom.com/'>
             <img src='https://www.paycom.com/images/paycom-logo-black-clear.png?ver=1.2'
             alt='paycom-logo-black-clear'
             style={{ maxWidth: '200px' }}/>
           </a>
-        </p>
-        <p>Please contact me via email by clicking the envelope icon in the upper right.</p>
+        </p> */}
+        <p>Please contact me via email by clicking the envelope icon in the upper
+          right or connecting with me on social media.</p>
       </div>
       {width < mobileViewWidth ? null : <img src={profilePicture} alt='Me' className={img} style={{ maxWidth: '400px' }}/>}
     </div>
