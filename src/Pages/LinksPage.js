@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles, Button } from '@material-ui/core'
-import backgroundImage from '../assets/blueridge.jpg'
+import backgroundImage from '../assets/blueridge.avif'
 import { setTitle } from '../Helpers'
 
 export const title = 'Links'

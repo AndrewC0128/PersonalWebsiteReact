@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import backgroundImage from '../assets/blueridge.jpg'
+import backgroundImage from '../assets/blueridge.avif'
 import { makeStyles, Typography } from '@material-ui/core'
 import { init as Typist } from 'ityped'
 

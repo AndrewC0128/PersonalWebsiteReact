@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import profilePicture from '../assets/profilePicture.jpg'
-import mobileProfilePicture from '../assets/mobileProfilePicture.png'
+import mobileProfilePicture from '../assets/mobileProfilePicture.avif'
 import { Typography } from '@material-ui/core'
 import { getParagraph, mobileViewWidth, useStyles } from '../Helpers'
 import { useViewport } from './Viewport'
