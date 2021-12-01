@@ -5,33 +5,29 @@ import Education from '../Components/Education'
 import { setTitle, getParagraph } from '../Helpers'
 import IconsModal from '../Components/IconsModal'
 import { Typography } from '@material-ui/core'
+import { IconObjects } from '../Components/Objects'
 
 export const title = 'About Me'
+
+const EmployerObjects = (id, date, label, img, paragraph = null) => {
+  return { id: id, date: date, label: label, img: img, paragraph: paragraph }
+}
+
+const SchoolProps = (id, title, titleColor, backgroundColor, paragraph, img, altText, reverse = false) => {
+  return { id: id, title: title, titleColor: titleColor, backgroundColor: backgroundColor, paragraph: paragraph, img: img, alt: altText, reverse: reverse }
+}
 
 export default function AboutMePage () {
   const subtitle = '"The roots of education are bitter, but the fruit is sweet." - Aristotle'
   setTitle(title)
 
-  const BUProps = {
-    id: 'baylor',
-    title: 'BAYLOR UNIVERSITY',
-    titleColor: '#fecb00',
-    backgroundColor: '#003015',
-    paragraph: './assets/paragraphs/baylorParagraph.txt',
-    img: require('../assets/judgeBaylor.jpg').default,
-    alt: 'Judge Baylor Picture'
-  }
+  const BUProps = SchoolProps('baylor', 'BAYLOR UNIVERSITY', '#fecb00', '#003015',
+    './assets/paragraphs/baylorParagraph.txt', require('../assets/judgeBaylor.jpg').default, 'Judge Baylor Picture'
+  )
 
-  const LSCProps = {
-    id: 'lsc',
-    title: 'LONE STAR COLLEGE',
-    titleColor: '#b30838',
-    backgroundColor: '#003768',
-    paragraph: './assets/paragraphs/lonestarParagraph.txt',
-    img: require('../assets/lscGraduation.jpg').default,
-    alt: 'LSC Graduation Picture',
-    reverse: 'true'
-  }
+  const LSCProps = SchoolProps('lsc', 'LONE STAR COLLEGE', '#b30838', '#003768',
+    './assets/paragraphs/lonestarParagraph.txt', require('../assets/lscGraduation.jpg').default, 'LSC Graduation Picture', true
+  )
 
   function getSectionHeader (title, id) {
     return (
@@ -62,154 +58,41 @@ export default function AboutMePage () {
 }
 
 const PageSectionIcons = [
-  {
-    label: 'Education',
-    img: 'education.png',
-    href: '#baylor'
-  },
-  {
-    label: 'Work Experience',
-    img: 'work.png',
-    href: '#work'
-  },
-  {
-    label: 'Affiliations',
-    img: 'affiliations.png',
-    href: '#volunteer',
-    lastOne: true
-  }
+  IconObjects('Education', 'education.png', '#baylor'),
+  IconObjects('Work Experience', 'work.png', '#work'),
+  IconObjects('Affiliations', 'affiliations.png', '#volunteer', true)
 ]
 
 // Use iOS Image Layout on Imag2icon
 const ProgrammingLangIcons = [
-  {
-    label: 'C++',
-    img: 'c++.png'
-  },
-  {
-    label: 'C',
-    img: 'c.png'
-  },
-  {
-    label: 'Shell Scripting',
-    img: 'bash.png'
-  },
-  {
-    label: 'Java',
-    img: 'java.png'
-  },
-  {
-    label: 'Kotlin',
-    img: 'kotlin.png'
-  },
-  {
-    label: 'Python',
-    img: 'python.png'
-  },
-  {
-    label: 'MySQL',
-    img: 'mysql.png'
-  },
-  {
-    label: 'Angular',
-    img: 'angular.png'
-  },
-  {
-    label: 'C#',
-    img: 'csharp.png'
-  },
-  {
-    label: 'Spark+Hadoop',
-    img: 'spark+hadoop.png'
-  },
-  {
-    label: 'React',
-    img: 'react.png',
-    lastOne: true
-  }
+  IconObjects('C++', 'c++.png'),
+  IconObjects('C', 'c.png'),
+  IconObjects('Shell Scripting', 'bash.png'),
+  IconObjects('Java', 'java.png'),
+  IconObjects('Kotlin', 'kotlin.png'),
+  IconObjects('Python', 'python.png'),
+  IconObjects('MySQL', 'mysql.png'),
+  IconObjects('Angular', 'angular.png'),
+  IconObjects('C#', 'csharp.png'),
+  IconObjects('Spark+Hadoop', 'spark+hadoop.png'),
+  IconObjects('React', 'react.png', null, true)
 ]
 
-const paragraphPath = 'assets/paragraphs/'
 // Use iMessage Image Layout on Imag2icon
 const Employers = [
-  {
-    id: 'Paycom',
-    date: 'Current',
-    label: 'Software Developer I',
-    img: 'paycom.png'
-  },
-  {
-    id: 'ExxonMobil',
-    date: 'Summer 2020 Remote Internship',
-    label: 'Full Stack Developer Intern',
-    img: 'xom.png',
-    paragraph: getParagraph(`./${paragraphPath}xomParagraph.txt`)
-  },
-  {
-    id: 'H-E-B',
-    date: 'Summer 2019 Internship',
-    label: 'Software Engineer Intern',
-    img: 'heb.png',
-    paragraph: getParagraph(`./${paragraphPath}hebParagraph.txt`)
-  }
-  // {
-  //   id: 'PDQ Restaurants',
-  //   date: 'Oct 2015 - May 2017',
-  //   label: 'Shift Manager',
-  //   img: 'pdq.png',
-  //   paragraph: getParagraph(`./${paragraphPath}pdqParagraph.txt`)
-  // },
-  // {
-  //   id: 'Dunkin Donuts',
-  //   date: 'Mar 2015 - Jun 2016',
-  //   label: 'Shift Leader',
-  //   img: 'dunkin.png',
-  //   paragraph: getParagraph(`./${paragraphPath}dunkinParagraph.txt`)
-  // }
+  EmployerObjects('Paycom', 'Current', 'Software Developer I', 'paycom.png'),
+  EmployerObjects('ExxonMobil', 'Summer 2020 Remote Internship', 'Full Stack Developer Intern', 'xom.png', getParagraph('./assets/paragraphs/xomParagraph.txt')),
+  EmployerObjects('H-E-B', 'Summer 2019 Internship', 'Software Engineer Intern', 'heb.png', getParagraph('./assets/paragraphs/hebParagraph.txt'))
+  // EmployerObjects('PDQ Restaurants', 'Oct 2015 - May 2017', 'Shift Manager', 'pdq.png', getParagraph(`./assets/paragraphs/pdqParagraph.txt`))
+  // EmployerObjects('Dunkin Donuts', 'Mar 2015 - Jun 2016', 'Shift Leader', 'dunkin.png', getParagraph(`./assets/paragraphs/dunkinParagraph.txt`))
 ]
 
 // Use Square Image Layout on Imag2icon
 const Affiliations = [
-  {
-    id: 'Baylor University Student Government',
-    date: 'Jul 2020 - May 2021',
-    label: 'Web Developer',
-    img: 'stugov.png',
-    paragraph: getParagraph(`./${paragraphPath}stugovParagraph.txt`)
-  },
-  {
-    id: 'Computing for Compassion',
-    date: 'Sept 2018 - May 2020',
-    label: 'Member',
-    img: 'c4c.png',
-    paragraph: getParagraph(`./${paragraphPath}c4cParagraph.txt`)
-  },
-  {
-    id: 'Upsilon Pi Epsilon (Baylor University Chapter)',
-    date: 'Oct 2018 – May 2021',
-    label: 'Member',
-    img: 'upe.png',
-    paragraph: getParagraph(`./${paragraphPath}upeParagraph.txt`)
-  },
-  {
-    id: 'Baylor’s Virtual Reality Club',
-    date: 'Feb 2018 – May 2018',
-    label: 'Founding Member',
-    img: 'baylorvr.png',
-    paragraph: getParagraph(`./${paragraphPath}baylorvrParagraph.txt`)
-  },
-  {
-    id: 'Phi Theta Kappa (Alpha Rho Mu Chapter)',
-    date: 'Mar 2016 – May 2017',
-    label: 'Member',
-    img: 'ptk.png',
-    paragraph: getParagraph(`./${paragraphPath}ptkParagraph.txt`)
-  },
-  {
-    id: 'YMCA of Greater Houston',
-    date: 'Aug 2017 – Aug 2018',
-    label: 'Adult Volunteer',
-    img: 'ymca.png',
-    paragraph: getParagraph(`./${paragraphPath}ymcaParagraph.txt`)
-  }
+  EmployerObjects('Baylor University Student Government', 'Jul 2020 - Jul 2021', 'Web Developer', 'stugov.png', getParagraph('./assets/paragraphs/stugovParagraph.txt')),
+  EmployerObjects('Computing for Compassion', 'Sept 2018 - May 2020', 'Member', 'c4c.png', getParagraph('./assets/paragraphs/c4cParagraph.txt')),
+  EmployerObjects('Upsilon Pi Epsilon (Baylor University Chapter)', 'Oct 2018 – May 2021', 'Member', 'upe.png', getParagraph('./assets/paragraphs/upeParagraph.txt')),
+  EmployerObjects('Baylor’s Virtual Reality Club', 'Feb 2018 – May 2018', 'Founding Member', 'baylorvr.png', getParagraph('./assets/paragraphs/baylorvrParagraph.txt')),
+  EmployerObjects('Phi Theta Kappa (Alpha Rho Mu Chapter)', 'Mar 2016 – May 2017', 'Member', 'ptk.png', getParagraph('./assets/paragraphs/ptkParagraph.txt')),
+  EmployerObjects('YMCA of Greater Houston', 'Aug 2017 – Aug 2018', 'Adult Volunteer', 'ymca.png', getParagraph('./assets/paragraphs/ymcaParagraph.txt'))
 ]

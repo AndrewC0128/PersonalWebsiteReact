@@ -3,6 +3,7 @@ import Banner from '../Components/Banner'
 import Introduction from '../Components/Introduction'
 import Icons from '../Components/Icons'
 import { setTitle } from '../Helpers'
+import { IconObjects } from '../Components/Objects'
 
 export const title = 'Home'
 
@@ -20,35 +21,10 @@ export default function HomePage () {
 }
 
 const AboutIcons = [
-  {
-    label: 'College Degreed',
-    img: 'degreed.png',
-    href: '/about#lsc'
-  },
-  {
-    label: 'Programming Oreinted',
-    img: 'code.png',
-    href: '/about#prog'
-  },
-  {
-    label: 'Honor Society Scholar',
-    img: 'honor.png',
-    href: '/about#baylor'
-  },
-  {
-    label: 'Fitness Enthusiast',
-    img: 'heartbeat.png'
-    // href: '/fitness'
-  },
-  {
-    label: 'Management Experience',
-    img: 'mgmt.png',
-    href: '/about#work'
-  },
-  {
-    label: 'Active Community Volunteer',
-    img: 'volunteer.png',
-    href: '/about#volunteer',
-    lastOne: true
-  }
+  IconObjects('College Degreed', 'degreed.png', '/about#lsc'),
+  IconObjects('Programming Oreinted', 'code.png', '/about#prog'),
+  IconObjects('Honor Society Scholar', 'honor.png', '/about#baylor'),
+  IconObjects('Fitness Enthusiast', 'heartbeat.png', null), /* href: '/fitness' */
+  IconObjects('Management Experience', 'mgmt.png', '/about#work'),
+  IconObjects('Active Community Volunteer', 'volunteer.png', '/about#volunteer', true)
 ]
