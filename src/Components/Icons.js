@@ -21,7 +21,8 @@ export default function Icons (props) {
             style: { width: props.imgWidth, height: props.imgHeight },
             disabled: !href
           }}>
-            <img key={img} src={require(`../${props.imgsPath}${img}`).default} alt={label} style={{ maxWidth: props.imgWidth }}/>
+            <img key={img} src={require(`../${props.imgsPath}${img}`).default} alt={label}
+              width={props.imgWidth} height={props.imgHeight} style={{ maxWidth: props.imgWidth }}/>
           </Button>
           <br/>
           {props.showLabel === false ? null : label }

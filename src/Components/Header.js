@@ -146,7 +146,7 @@ export default function Header () {
           <IconButton {...{
             edge: 'start',
             color: 'inherit',
-            // 'aria-label': 'menu',
+            'aria-label': 'Hamburger Icon',
             // 'aria-haspopup': 'true',
             onClick: () => handleButtonDrawer(true)
           }}>
@@ -165,7 +165,7 @@ export default function Header () {
           <IconButton {...{
             edge: 'start',
             color: 'inherit',
-            // 'aria-label': 'menu',
+            'aria-label': 'Grid Icon',
             // 'aria-haspopup': 'true',
             onClick: () => handleIconDrawer(true)
           }}>

@@ -3,7 +3,7 @@ import Banner from '../Components/Banner'
 import Introduction from '../Components/Introduction'
 import Icons from '../Components/Icons'
 import { setTitle } from '../Helpers'
-import { IconObjects } from '../Components/Objects'
+import { IconObjects } from '../Components/Constants'
 
 export const title = 'Home'
 

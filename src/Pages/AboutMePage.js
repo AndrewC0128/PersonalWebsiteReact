@@ -5,7 +5,7 @@ import Education from '../Components/Education'
 import { setTitle, getParagraph } from '../Helpers'
 import IconsModal from '../Components/IconsModal'
 import { Typography } from '@material-ui/core'
-import { IconObjects } from '../Components/Objects'
+import { IconObjects } from '../Components/Constants'
 
 export const title = 'About Me'
 
