@@ -20,7 +20,7 @@ export default function Introduction () {
   return (
     <div className={rowContainer}>
       <div className={paragraph}>
-        {width < mobileViewWidth ? <img src={mobileProfilePicture} alt='Me' className={img}/> : null}
+        {width < mobileViewWidth ? <img src={mobileProfilePicture} alt='Me' className={img} width={300} height={300}/> : null}
         <Typography variant='h2' className={paragraphTitle}>Intro</Typography>
         <hr className={hrLine}/>
         {paragraphText}
@@ -35,7 +35,7 @@ export default function Introduction () {
         <p>Please contact me via email by clicking the envelope icon in the upper
           right or connecting with me on social media.</p>
       </div>
-      {width < mobileViewWidth ? null : <img src={profilePicture} alt='Me' className={img} style={{ maxWidth: '400px' }}/>}
+      {width < mobileViewWidth ? null : <img src={profilePicture} alt='Me' className={img} width={400} height={400} style={{ maxWidth: '400px' }}/>}
     </div>
   )
 }

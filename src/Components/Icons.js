@@ -18,7 +18,7 @@ export default function Icons (props) {
             key: href || `id${label}`,
             to: href || history.location.pathname,
             component: Link,
-            style: { maxWidth: props.imgWidth, maxHeight: props.imgHeight },
+            style: { width: props.imgWidth, height: props.imgHeight },
             disabled: !href
           }}>
             <img key={img} src={require(`../${props.imgsPath}${img}`).default} alt={label} style={{ maxWidth: props.imgWidth }}/>
