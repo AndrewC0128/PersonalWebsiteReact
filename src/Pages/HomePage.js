@@ -15,7 +15,7 @@ export default function HomePage () {
     <>
       <Banner title='Hi, I&apos;m Andrew Case.' subtitle={subtitle} typing={true}/>
       <Introduction/>
-      <Icons icons={AboutIcons} imgsPath='assets/iconFinderImages/' imgWidth={64}/>
+      <Icons icons={AboutIcons} lines={false} imgsPath='assets/iconFinderImages/' imgWidth={64}/>
     </>
   )
 }

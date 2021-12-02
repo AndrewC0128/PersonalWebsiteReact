@@ -9,17 +9,13 @@ import { IconObjects } from '../Components/Objects'
 
 export const title = 'About Me'
 
-const EmployerObjects = (id, date, label, img, paragraph = null) => {
-  return { id: id, date: date, label: label, img: img, paragraph: paragraph }
-}
-
-const SchoolProps = (id, title, titleColor, backgroundColor, paragraph, img, altText, reverse = false) => {
-  return { id: id, title: title, titleColor: titleColor, backgroundColor: backgroundColor, paragraph: paragraph, img: img, alt: altText, reverse: reverse }
-}
-
 export default function AboutMePage () {
   const subtitle = '"The roots of education are bitter, but the fruit is sweet." - Aristotle'
   setTitle(title)
+
+  const SchoolProps = (id, title, titleColor, backgroundColor, paragraph, img, altText, reverse = false) => {
+    return { id: id, title: title, titleColor: titleColor, backgroundColor: backgroundColor, paragraph: paragraph, img: img, alt: altText, reverse: reverse }
+  }
 
   const BUProps = SchoolProps('baylor', 'BAYLOR UNIVERSITY', '#fecb00', '#003015',
     './assets/paragraphs/baylorParagraph.txt', require('../assets/judgeBaylor.jpg').default, 'Judge Baylor Picture'
@@ -78,6 +74,9 @@ const ProgrammingLangIcons = [
   IconObjects('React', 'react.png', null, true)
 ]
 
+const EmployerObjects = (id, date, label, img, paragraph = null) => {
+  return { id: id, date: date, label: label, img: img, paragraph: paragraph }
+}
 // Use iMessage Image Layout on Imag2icon
 const Employers = [
   EmployerObjects('Paycom', 'Current', 'Software Developer I', 'paycom.png'),
