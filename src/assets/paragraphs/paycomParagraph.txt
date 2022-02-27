@@ -1,0 +1,6 @@
+• Working on a team of 8+ developers, coordinating ideas, implementations, and code revisions
+• Handling critical errors and live bug fixes affecting thousands of clients
+• Implementing new features to proprietary software (including Beti)
+• Writing SQL queries and using other database tools to perform datafixes for multiple environments
+• Applying PHPUnit tests on all code modifications, including refactoring others', with high coverage
+• Direct communication with QA analysts for testing changes and handling edge cases

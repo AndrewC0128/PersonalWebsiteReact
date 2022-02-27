@@ -21,7 +21,7 @@ export default function HomePage () {
 }
 
 const AboutIcons = [
-  IconObjects('College Degreed', 'degreed.png', '/about#lsc'),
+  IconObjects('College Degreed', 'degreed.png', '/about#baylor'),
   IconObjects('Programming Oreinted', 'code.png', '/about#prog'),
   IconObjects('Honor Society Scholar', 'honor.png', '/about#baylor'),
   IconObjects('Fitness Enthusiast', 'heartbeat.png', null), /* href: '/fitness' */

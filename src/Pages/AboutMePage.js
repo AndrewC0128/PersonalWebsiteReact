@@ -79,8 +79,9 @@ const EmployerObjects = (id, date, label, img, paragraph = null) => {
 }
 // Use iMessage Image Layout on Imag2icon
 const Employers = [
-  EmployerObjects('Paycom', 'Current', 'Software Developer I', 'paycom.png'),
-  EmployerObjects('ExxonMobil', 'Summer 2020 Remote Internship', 'Full Stack Developer Intern', 'xom.png', getParagraph('./assets/paragraphs/xomParagraph.txt')),
+  EmployerObjects('ExxonMobil', 'Feb 2022 - Present', 'Full Stack Developer', 'xom.png', getParagraph('./assets/paragraphs/xomParagraph.txt')),
+  EmployerObjects('Paycom', 'May 2021 - Feb 2022', 'Software Developer', 'paycom.png', getParagraph('./assets/paragraphs/paycomParagraph.txt')),
+  // EmployerObjects('ExxonMobil', 'Summer 2020 Remote Internship', 'Full Stack Developer Intern', 'xom.png', getParagraph('./assets/paragraphs/xomInternParagraph.txt')),
   EmployerObjects('H-E-B', 'Summer 2019 Internship', 'Software Engineer Intern', 'heb.png', getParagraph('./assets/paragraphs/hebParagraph.txt'))
   // EmployerObjects('PDQ Restaurants', 'Oct 2015 - May 2017', 'Shift Manager', 'pdq.png', getParagraph(`./assets/paragraphs/pdqParagraph.txt`))
   // EmployerObjects('Dunkin Donuts', 'Mar 2015 - Jun 2016', 'Shift Leader', 'dunkin.png', getParagraph(`./assets/paragraphs/dunkinParagraph.txt`))
@@ -88,10 +89,10 @@ const Employers = [
 
 // Use Square Image Layout on Imag2icon
 const Affiliations = [
+  EmployerObjects('YMCA of Greater Houston', 'Aug 2017 – Present', 'Adult Volunteer', 'ymca.png', getParagraph('./assets/paragraphs/ymcaParagraph.txt')),
   EmployerObjects('Baylor University Student Government', 'Jul 2020 - Jul 2021', 'Web Developer', 'stugov.png', getParagraph('./assets/paragraphs/stugovParagraph.txt')),
   EmployerObjects('Computing for Compassion', 'Sept 2018 - May 2020', 'Member', 'c4c.png', getParagraph('./assets/paragraphs/c4cParagraph.txt')),
   EmployerObjects('Upsilon Pi Epsilon (Baylor University Chapter)', 'Oct 2018 – May 2021', 'Member', 'upe.png', getParagraph('./assets/paragraphs/upeParagraph.txt')),
   EmployerObjects('Baylor’s Virtual Reality Club', 'Feb 2018 – May 2018', 'Founding Member', 'baylorvr.png', getParagraph('./assets/paragraphs/baylorvrParagraph.txt')),
-  EmployerObjects('Phi Theta Kappa (Alpha Rho Mu Chapter)', 'Mar 2016 – May 2017', 'Member', 'ptk.png', getParagraph('./assets/paragraphs/ptkParagraph.txt')),
-  EmployerObjects('YMCA of Greater Houston', 'Aug 2017 – Aug 2018', 'Adult Volunteer', 'ymca.png', getParagraph('./assets/paragraphs/ymcaParagraph.txt'))
+  EmployerObjects('Phi Theta Kappa (Alpha Rho Mu Chapter)', 'Mar 2016 – May 2017', 'Member', 'ptk.png', getParagraph('./assets/paragraphs/ptkParagraph.txt'))
 ]
